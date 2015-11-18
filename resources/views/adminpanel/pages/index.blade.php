@@ -19,7 +19,7 @@
 				<div class="panel-heading">
 					<div class="btn-block">
 						{!! Form::label('pages', trans('adminpanel.pages'), array('class' => 'btn btn-lg')) !!}
-						<a href="../home/pages/create">{!! Form::button(trans('adminpanel.add'), ['class' => 'btn btn-primary btn-md pull-right']) !!}</a>
+						<a href="{{ action('PageController@create') }}">{!! Form::button(trans('adminpanel.add'), ['class' => 'btn btn-primary btn-md pull-right']) !!}</a>
 					</div>
 				</div>
 				<div class="panel-body">
