@@ -9,11 +9,11 @@
 				<div class="alert alert-success">{{ Session::get('flash_page_positive') }}</div>
 			@endif
 			<div class="panel panel-default">
-				<div class="panel-heading">Edytuj profil nauczyciela</div>
+				<div class="panel-heading">{{ trans('adminpanel.edit') }}</div>
 				<div class="panel-body">
 					{!! Form::model($page, array('method' => 'PATCH', 'action' => ['PageController@update', $page->id])) !!}
 
-					@include('adminpanel.pages._form', ['submitButtonText' => 'Zapisz'])
+					@include('adminpanel.pages._form', ['submitButtonText' => trans('adminpanel.save')])
 
        				{!! Form::close() !!}
 

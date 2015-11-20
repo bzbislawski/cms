@@ -26,11 +26,4 @@ class TeacherRequest extends Request {
         ];
 	}
 
-	public function messages()
-    {
-        return [
-            'name.required' => 'Brakuje imienia i nazwiska',  
-        ];
-    }
-
 }

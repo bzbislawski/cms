@@ -19,8 +19,8 @@
 			<div class="panel panel-default">
 			<div class="panel-heading">
 				<div class="btn-block">
-					{!! Form::label('banery', 'Banery', array('class' => 'btn btn-lg')) !!}
-					<a href="../home/banners/create">{!! Form::button('Dodaj Baner', ['class' => 'btn btn-primary btn-md pull-right']) !!}</a>
+					{!! Form::label('banner', trans('adminpanel.banners'), array('class' => 'btn btn-lg')) !!}
+					<a href="{{ action('BannerController@create') }}">{!! Form::button(trans('adminpanel.add'), ['class' => 'btn btn-primary btn-md pull-right']) !!}</a>
 				</div>
 			</div>
 			<div class="panel-body">
@@ -29,11 +29,11 @@
 				    <thead>
 				      <tr>
 				      	<th class="col-sm-1">ID</th>
-				        <th>Tytuł</th>
-				        <th>Link</th>
-				        <th>Opublikowano</th>
-				        <th class="col-sm-1">Edytuj</th>
-				        <th class="col-sm-1">Usuń</th>
+				        <th>{{ trans('adminpanel.title') }}</th>
+					    <th>{{ trans('adminpanel.url') }}</th>
+				        <th>{{ trans('adminpanel.isPublished') }}</th>
+					    <th class="col-sm-1">{{ trans('adminpanel.edit') }}</th>
+					    <th class="col-sm-1">{{ trans('adminpanel.delete') }}</th>
 				      </tr>
 				    </thead>
 				    <tbody>
@@ -42,13 +42,12 @@
 				      	<td>{{ $banner->id}}</td>
 				        <td>{{ $banner->title}}</td>
 				        <td>{{ $banner->link}}</td>
-				        <td>{{ $banner->isPublished ? 'TAK' : 'NIE'}}</td>
+				        <td>{{ $banner->isPublished ? trans('adminpanel.yes') : trans('adminpanel.no') }}</td>
 				        <td>
 					        {!! Form::btnLink('<span class="glyphicon glyphicon-edit"></span>', 'banners/'. $banner->id.'/edit', null, array('class'=>'btn btn-warning btn-sm'), '') !!}
 				        </td>
 				        <td>
 				        {!! Form::open(array('method' => 'DELETE', 'action' => ['BannerController@destroy', $banner->id])) !!}
-				        {!! Form::hidden('id', $banner->id) !!}
 	       				{!! Form::btnLink('<span class="glyphicon glyphicon-remove"></span>', '', null, array('class'=>'btn btn-danger btn-sm'), '') !!}
 	       				{!! Form::close() !!}
 						</td>

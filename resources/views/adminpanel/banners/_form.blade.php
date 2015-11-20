@@ -5,38 +5,38 @@
 @endif
 
 <div class="form-group">
-    {!! Form::label('title', 'Tytuł:') !!}
+    {!! Form::label('title', trans('adminpanel.title').':') !!}
     {!! Form::text('title', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::label('link', 'Link:') !!}
+    {!! Form::label('link', trans('adminpanel.url').':') !!}
     {!! Form::text('link', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::label('text', 'Pierwsza linia tekstu:') !!}
+    {!! Form::label('text', trans('adminpanel.firstLine').':') !!}
     {!! Form::text('text', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::label('text2', 'Druga linia tekstu:') !!}
+    {!! Form::label('text2', trans('adminpanel.secondLine').':') !!}
     {!! Form::text('text2', null, ['class' => 'form-control']) !!}
 </div>
 
 @if($bladeName == 'create')
 <div class="form-group">
-    {!! Form::label('image', 'Zdjęcie:') !!}
+    {!! Form::label('image', trans('adminpanel.image').':') !!}
     {!! Form::file('image', ['class' => 'form-control']) !!}
 </div>
 @endif
 
 <div class="form-group">
-    {!! Form::label('isPublished', 'Publikuj:') !!}
-    {!! Form::select('isPublished', array(true=>'Publikuj', false=>'Ukryj'), null,['class' => 'form-control']) !!}
+    {!! Form::label('isPublished', trans('adminpanel.publish').':') !!}
+    {!! Form::select('isPublished', array(true=>trans('adminpanel.publish'), false=>trans('adminpanel.hide')), null,['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group text-center">
     {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary']) !!}
-    {!! Html::link('/home/banners', 'Wyjdź', ['class' => 'btn btn-primary']) !!}
+    {!! Html::link(action('BannerController@index'), trans('adminpanel.back'), ['class' => 'btn btn-primary']) !!}
 </div>

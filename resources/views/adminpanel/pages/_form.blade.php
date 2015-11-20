@@ -30,18 +30,18 @@
 
 <div class="form-group text-center">
 	{!! Form::submit($submitButtonText, ['class' => 'btn btn-primary']) !!}
-	{!! Html::link('/home/pages', trans('adminpanel.back') .':', ['class' => 'btn btn-primary']) !!}
+	{!! Html::link(action('PageController@index'), trans('adminpanel.back'), ['class' => 'btn btn-primary']) !!}
 </div>
 
 
-            <script>
-                // Replace the <textarea id="editor1"> with a CKEditor
-                // instance, using default configuration.
-                CKEDITOR.replace( 'editor1' );
-               /* CKEDITOR.replace( 'editor1', {
-    filebrowserBrowseUrl: '/browser/browse.php',
-    filebrowserImageBrowseUrl: '/browser/browse.php?type=Images',
-    filebrowserUploadUrl: '/uploader/upload.php',
-    filebrowserImageUploadUrl: '/uploader/upload.php?type=Images'
+<script>
+// Replace the <textarea id="editor1"> with a CKEditor
+// instance, using default configuration.
+CKEDITOR.replace( 'editor1' );
+/* CKEDITOR.replace( 'editor1', {
+filebrowserBrowseUrl: '/browser/browse.php',
+filebrowserImageBrowseUrl: '/browser/browse.php?type=Images',
+filebrowserUploadUrl: '/uploader/upload.php',
+filebrowserImageUploadUrl: '/uploader/upload.php?type=Images'
 });*/
-            </script>
+</script>

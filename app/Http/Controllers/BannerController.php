@@ -54,7 +54,7 @@ class BannerController extends Controller {
 		$banner->addImage($request);
 		
 
-		\Session::flash('flash_banner_positive', 'Gratulacje! Baner został poprawnie dodany.'); 
+		\Session::flash('flash_banner_positive', trans('adminpanel.banner_store')); 
 		return redirect('home/banners');
 	}
 
@@ -81,7 +81,7 @@ class BannerController extends Controller {
 		$banner = Banner::findOrFail($id);
 		$banner->update($request->all());
 
-		\Session::flash('flash_banner_positive', 'Gratulacje! Baner został zapisany.');
+		\Session::flash('flash_banner_positive', trans('adminpanel.banner_update'));
 		return redirect()->back();
 	}
 
@@ -95,7 +95,7 @@ class BannerController extends Controller {
 		Banner::deleteImage($id);
 		Banner::destroy($id);
 
-		\Session::flash('flash_banner_positive', 'Gratulacje! Baner został usunięty.');
+		\Session::flash('flash_banner_positive', trans('adminpanel.banner_delete'));
 		return redirect('home/banners');
 	}
 

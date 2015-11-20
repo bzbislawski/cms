@@ -47,7 +47,6 @@
 					        </td>
 					        <td>
 					        {!! Form::open(array('method' => 'DELETE', 'action' => ['PageController@destroy', $page->id])) !!}
-					        {!! Form::hidden('id', $page->id) !!}
 					        {!! Form::btnLink('<span class="glyphicon glyphicon-remove"></span>', '', null, array('class'=>'btn btn-danger btn-sm'), '') !!}
 		       				{!! Form::close() !!}
 							</td>

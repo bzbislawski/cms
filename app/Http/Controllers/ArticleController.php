@@ -54,7 +54,7 @@ class ArticleController extends Controller {
 		Auth::user()->articles()->save($article);
 
 
-		\Session::flash('flash_article_positive', 'Gratulacje! Artykuł został poprawnie dodany.'); 
+		\Session::flash('flash_article_positive', trans('adminpanel.article_store'));
 		return redirect('home/articles');
 	}
 
@@ -94,7 +94,7 @@ class ArticleController extends Controller {
 		$article = Article::findOrFail($id);
 		$article->update($request->except('published_at'));
 
-		\Session::flash('flash_article_positive', 'Gratulacje! Artykuł został zapisany.');
+		\Session::flash('flash_article_positive', trans('adminpanel.article_update'));
 		return redirect()->back();
 	}
 
@@ -108,7 +108,7 @@ class ArticleController extends Controller {
 	{
 		Article::destroy($id);
 		
-		\Session::flash('flash_article_positive', 'Gratulacje! Artykuł został usunięty.');
+		\Session::flash('flash_article_positive', trans('adminpanel.article_delete'));
 		return redirect('home/articles');
 	}
 

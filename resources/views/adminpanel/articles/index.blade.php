@@ -18,8 +18,8 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<div class="btn-block">
-						{!! Form::label('Artykuły', 'Artykuły', array('class' => 'btn btn-lg')) !!}
-						<a href="../home/articles/create">{!! Form::button('Dodaj Artykuł', ['class' => 'btn btn-primary btn-md pull-right']) !!}</a>
+						{!! Form::label('articles', trans('adminpanel.articles'), array('class' => 'btn btn-lg')) !!}
+						<a href="{{ action('ArticleController@create') }}">{!! Form::button(trans('adminpanel.add'), ['class' => 'btn btn-primary btn-md pull-right']) !!}</a>
 					</div>
 				</div>
 				<div class="panel-body">
@@ -27,12 +27,12 @@
 						<table class="table table-hover table-condensed table-bordered">
 					    <thead>
 					      <tr>
-					        <th>Tytuł</th>
-					        <th>Data publikacji</th>
-					        <th>Aktualizacja</th>
-					        <th>Opublikowano</th>
-					        <th class="col-sm-1">Edytuj</th>
-					        <th class="col-sm-1">Usuń</th>
+					        <th>{{ trans('adminpanel.title') }}</th>
+					        <th>{{ trans('adminpanel.published_at') }}</th>
+					        <th>{{ trans('adminpanel.updated_at') }}</th>
+					        <th>{{ trans('adminpanel.isPublished') }}</th>
+					        <th class="col-sm-1">{{ trans('adminpanel.edit') }}</th>
+					        <th class="col-sm-1">{{ trans('adminpanel.delete') }}</th>
 					      </tr>
 					    </thead>
 					    <tbody>
@@ -41,13 +41,12 @@
 					        <td>{{ $article->title}}</td>
 					        <td>{{ $article->published_at->format('d.m.Y H:i:s')}}</td>
 					        <td>{{ $article->updated_at->diffForHumans()}}</td>
-					        <td>{{ $article->isPublished ? 'TAK' : 'NIE'}}</td>
+					        <td>{{ $article->isPublished ? trans('adminpanel.yes') : trans('adminpanel.no') }}</td>
 					        <td>
 					        	{!! Form::btnLink('<span class="glyphicon glyphicon-edit"></span>', 'articles/'. $article->id.'/edit', null, array('class'=>'btn btn-warning btn-sm'), '') !!}
 					        </td>
 					        <td>
 						        {!! Form::open(array('method' => 'DELETE', 'action' => ['ArticleController@destroy', $article->id])) !!}
-								{!! Form::hidden('id', $article->id) !!}
 								{!! Form::btnLink('<span class="glyphicon glyphicon-remove"></span>', '', null, array('class'=>'btn btn-danger btn-sm'), '') !!}
 					       		{!! Form::close() !!}
 							</td>

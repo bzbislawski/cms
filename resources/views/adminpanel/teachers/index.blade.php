@@ -19,8 +19,8 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<div class="btn-block">
-						{!! Form::label('nauczyciele', 'Nauczyciele', array('class' => 'btn btn-lg')) !!}
-						{!! Form::btnLink('<span class="icon-c-crown-plus"></span>Dodaj Nauczyciela', '../home/teachers/create', null, array('class'=>'btn btn-primary btn-md pull-right')) !!}
+						{!! Form::label('teachers', trans('adminpanel.teachers'), array('class' => 'btn btn-lg')) !!}
+						{!! Form::btnLink('<span class="icon-c-crown-plus"></span>'.trans('adminpanel.add'), action('TeacherController@create'), null, array('class'=>'btn btn-primary btn-md pull-right')) !!}
 					</div>
 				</div>
 				<div class="panel-body">
@@ -29,10 +29,10 @@
 					    <thead>
 					      <tr>
 					      	<th class="col-sm-1">ID</th>
-					        <th>Imię i nazwisko</th>
-					        <th>Opublikowano</th>
-					        <th class="col-sm-1">Edytuj</th>
-					        <th class="col-sm-1">Usuń</th>
+					        <th>{{ trans('adminpanel.fullName') }}</th>
+					        <th>{{ trans('adminpanel.isPublished') }}</th>
+					        <th class="col-sm-1">{{ trans('adminpanel.edit') }}</th>
+					        <th class="col-sm-1">{{ trans('adminpanel.delete') }}</th>
 					      </tr>
 					    </thead>
 					    <tbody>
@@ -46,7 +46,6 @@
 					        </td>
 					        <td>
 					        {!! Form::open(array('method' => 'DELETE', 'action' => ['TeacherController@destroy', $teacher->id])) !!}
-					        {!! Form::hidden('id', $teacher->id) !!}
 		       				{!! Form::btnLink('<span class="glyphicon glyphicon-remove"></span>', '', null, array('class'=>'btn btn-danger btn-sm'), '') !!}
 		       				{!! Form::close() !!}
 							</td>

@@ -26,11 +26,4 @@ class PageRequest extends Request {
         ];
 	}
 
-	public function messages()
-    {
-        return [
-            'title.required' => 'Brakuje tytułu!',  
-        ];
-    }
-
 }

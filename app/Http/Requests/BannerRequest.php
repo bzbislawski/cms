@@ -44,6 +44,7 @@ class BannerRequest extends Request
     }
 
     /**
+     * DISABLED FOR MEMORY
      * Overwrites default error messages
      * 
      * @return array
@@ -51,8 +52,8 @@ class BannerRequest extends Request
     public function messages()
     {
         return [
-            'title.required' => 'Brakuje: tytułu',
-            'image.required' => 'Brakuje: obrazu',  
+            //'title.required' => 'Brakuje: tytułu',
+            //'image.required' => 'Brakuje: obrazu',  
         ];
     }
 }

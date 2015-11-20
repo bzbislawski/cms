@@ -49,7 +49,7 @@ class PageController extends Controller {
     	//Here we are storing newly created Page in storage. 
 		Page::create($request->all());
 
-		\Session::flash('flash_page_positive', 'Gratulacje! Nowa strona została poprawnie dodana.'); 
+		\Session::flash('flash_page_positive', trans('adminpanel.page_store')); 
 		return redirect('home/pages');
 	}
 
@@ -87,7 +87,7 @@ class PageController extends Controller {
 		$page = Page::findOrFail($id);
 		$page->update($request->all());
 
-		\Session::flash('flash_page_positive', 'Gratulacje! Strona została zapisana.');
+		\Session::flash('flash_page_positive', trans('adminpanel.page_update'));
 		return redirect()->back();
 	}
 
@@ -101,7 +101,7 @@ class PageController extends Controller {
 	{
 		Page::destroy($id);
 
-		\Session::flash('flash_page_positive', 'Gratulacje! Strona została usunięta.');
+		\Session::flash('flash_page_positive', trans('adminpanel.page_delete'));
 		return redirect('home/pages');
 	}
 

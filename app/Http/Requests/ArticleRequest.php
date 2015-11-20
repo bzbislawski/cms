@@ -30,16 +30,4 @@ class ArticleRequest extends Request
         ];
     }
 
-    /**
-     * Overwrites default error messages
-     * 
-     * @return array
-     */
-    public function messages()
-    {
-        return [
-            'title.required' => 'Brakuje tytułu',
-            'body.required' => 'Brakuje treści',     
-        ];
-    }
 }

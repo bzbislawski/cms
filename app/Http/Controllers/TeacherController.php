@@ -38,7 +38,7 @@ class TeacherController extends Controller {
 		$teacher->save();
 
 
-		\Session::flash('flash_teacher_positive', 'Udalo sie dodac!'); 
+		\Session::flash('flash_teacher_positive', trans('adminpanel.teacher_store')); 
 		return redirect('home/teachers');
 	}
 
@@ -54,22 +54,22 @@ class TeacherController extends Controller {
 	{
 		$teacher = Teacher::findOrFail($id);
 
-		if(isset($request['Zapisz']))
+		if(isset($request['update']))
 		{
 			$teacher->update($request->except('image'));
 			$teacher->addImage($request);
 			$teacher->save();
 
-			$message = 'Gratulacje! Profil nauczyciela został zapisany.';
+			$message = trans('adminpanel.teacher_update');
 		}
 
-		if(isset($request['Usuń']))
+		if(isset($request['delete']))
 		{
 			Teacher::deleteImage($id);
 			$teacher->image = "";
 			$teacher->save();
 			
-			$message = 'Gratulacje! Zdjęcie zostało usunięte.';
+			$message = trans('adminpanel.teacher_delete_image');
 		}
 
 		\Session::flash('flash_teacher_positive', $message);
@@ -83,7 +83,7 @@ class TeacherController extends Controller {
 		Teacher::destroy($id);
 		
 
-		\Session::flash('flash_teacher_positive', 'Gratulacje! Nauczyciel został usunięty.');
+		\Session::flash('flash_teacher_positive', trans('adminpanel.teacher_delete'));
 		return redirect('home/teachers');
 	}
 }
