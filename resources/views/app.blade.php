@@ -37,11 +37,11 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					@if (Auth::check())
-						<li>{!! Html::link(action('HomeController@index'), 'Main Page') !!}</li>
-						<li>{!! Html::link(action('ArticleController@index'), 'Articles') !!}</li>
-						<li>{!! Html::link(action('BannerController@index'), 'Banners') !!}</li>
-						<li>{!! Html::link(action('PageController@index'), 'Pages') !!}</li>
-						<li>{!! Html::link(action('TeacherController@index'), 'Teachers') !!}</li>
+						<li>{!! Html::link(action('HomeController@index'), trans('adminpanel.homePage')) !!}</li>
+						<li>{!! Html::link(action('ArticleController@index'), trans('adminpanel.articles')) !!}</li>
+						<li>{!! Html::link(action('BannerController@index'), trans('adminpanel.banners')) !!}</li>
+						<li>{!! Html::link(action('PageController@index'), trans('adminpanel.pages')) !!}</li>
+						<li>{!! Html::link(action('TeacherController@index'), trans('adminpanel.teachers')) !!}</li>
 					@endif
 				</ul>
 
