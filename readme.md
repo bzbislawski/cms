@@ -86,6 +86,14 @@ sites:
 192.168.10.10 test.dev
 ```
 
+* git clone repo and inside it:
+
+```
+#!bash
+
+composer install
+```
+
 
 You are ready to go, remember about .env file and migrating database.
 
