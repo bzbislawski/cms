@@ -1,7 +1,7 @@
 How to start:
 
-1. Install vagrant and virtualbox/vmware
-2. Install box for homestead
+* Install vagrant and virtualbox/vmware
+* Install box for homestead
 
 
 ```
@@ -19,7 +19,7 @@ laravel/homestead-7
 ```
 
 
-3. Type this command to get homestead executable access:
+* Type this command to get homestead executable access:
 
 ```
 #!bash
@@ -28,7 +28,7 @@ composer global require "laravel/homestead=~2.0"
 ```
 
 
-Try homestead command to check if is visible by the system
+* Try homestead command to check if is visible by the system
 
 ```
 #!bash
@@ -37,7 +37,7 @@ homestead
 ```
 
 
-If homestead is not recognized then type whats written below, other way skip this step
+* If homestead is not recognized then type whats written below, other way skip this step
 
 ```
 #!bash
@@ -46,7 +46,7 @@ export PATH="~/.composer/vendor/bin:$PATH"
 ```
 
 
-Initialize homestead
+* Initialize homestead
 
 ```
 #!bash
@@ -55,7 +55,7 @@ homestead init
 ```
 
 
-Set up Homestead.yaml in ~/.homestead. Can look like something like this:
+* Set up Homestead.yaml in ~/.homestead. Can look like something like this:
 
 ```
 #!yaml
@@ -74,9 +74,9 @@ sites:
 ```
 
 
-Catalogues one and two are placed on your OS, Code and test on vagrant/Homestead
+* Catalogues one and two are placed on your OS, Code and test on vagrant/Homestead
 
-To make domains work in your browser go to /etc/hosts file and append there
+* To make domains work in your browser go to /etc/hosts file and append there
 
 
 ```
