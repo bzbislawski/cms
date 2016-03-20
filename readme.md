@@ -3,8 +3,21 @@ How to start:
 1. Install vagrant and virtualbox/vmware
 2. Install box for homestead
 
-vagrant box add laravel/homestead 
-or laravel/homestead-7 if u want php 7.0
+
+```
+#!bash
+
+vagrant box add laravel/homestead
+```
+
+or if u want php 7.0
+
+```
+#!bash
+
+laravel/homestead-7 
+```
+
 
 3. Type _ to get homestead executable access:
 composer global require "laravel/homestead=~2.0"
