@@ -1,7 +1,7 @@
 How to start:
 
-* Install vagrant and virtualbox/vmware
-* Install box for homestead
+1. Install vagrant and virtualbox/vmware
+2. Install box for homestead
 
 
 ```
@@ -19,7 +19,7 @@ laravel/homestead-7
 ```
 
 
-* Type this command to get homestead executable access:
+3. Type this command to get homestead executable access:
 
 ```
 #!bash
