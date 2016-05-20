@@ -19,7 +19,7 @@
 				<div class="panel-heading">
 					<div class="btn-block">
 						{!! Form::label('articles', trans('adminpanel.articles'), array('class' => 'btn btn-lg')) !!}
-						<a href="{{ action('ArticleController@create') }}">{!! Form::button(trans('adminpanel.add'), ['class' => 'btn btn-primary btn-md pull-right']) !!}</a>
+						<a href="{{ action('Admin\ArticleController@create') }}">{!! Form::button(trans('adminpanel.add'), ['class' => 'btn btn-primary btn-md pull-right']) !!}</a>
 					</div>
 				</div>
 				<div class="panel-body">
@@ -46,7 +46,7 @@
 					        	{!! Form::btnLink('<span class="glyphicon glyphicon-edit"></span>', 'articles/'. $article->id.'/edit', null, array('class'=>'btn btn-warning btn-sm'), '') !!}
 					        </td>
 					        <td>
-						        {!! Form::open(array('method' => 'DELETE', 'action' => ['ArticleController@destroy', $article->id])) !!}
+						        {!! Form::open(array('method' => 'DELETE', 'action' => ['Admin\ArticleController@destroy', $article->id])) !!}
 								{!! Form::btnLink('<span class="glyphicon glyphicon-remove"></span>', '', null, array('class'=>'btn btn-danger btn-sm'), '') !!}
 					       		{!! Form::close() !!}
 							</td>

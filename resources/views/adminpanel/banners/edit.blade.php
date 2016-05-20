@@ -11,7 +11,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">{{ trans('adminpanel.edit') }}</div>
 				<div class="panel-body">
-				{!! Form::model($banner, array('method' => 'PATCH', 'action' => ['BannerController@update', $banner->id],'files'=>true)) !!}
+				{!! Form::model($banner, array('method' => 'PATCH', 'action' => ['Admin\BannerController@update', $banner->id],'files'=>true)) !!}
 
 					@include('adminpanel.banners._form', ['submitButtonText' => trans('adminpanel.save'), 'bladeName' => 'edit'])
 				{!! Form::close() !!}

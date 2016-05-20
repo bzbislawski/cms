@@ -8,7 +8,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">{{ trans('adminpanel.add') }}</div>
 				<div class="panel-body">
-					{!! Form::open(array('action' => array('ArticleController@store'))) !!}
+					{!! Form::open(array('action' => array('Admin\ArticleController@store'))) !!}
 			        
 			        @include('adminpanel.articles._form', ['submitButtonText' => trans('adminpanel.add'), 'bladeName' => 'create'])
 

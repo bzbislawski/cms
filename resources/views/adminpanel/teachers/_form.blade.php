@@ -32,5 +32,5 @@
 
 <div class="form-group text-center">
 	{!! Form::submit($submitButtonText, ['class' => 'btn btn-primary', 'name' => $submitButtonText]) !!}
-	{!! Html::link(action('TeacherController@index'), trans('adminpanel.back'), ['class' => 'btn btn-primary']) !!}
+	{!! Html::link(action('Admin\TeacherController@index'), trans('adminpanel.back'), ['class' => 'btn btn-primary']) !!}
 </div>

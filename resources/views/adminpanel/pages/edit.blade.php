@@ -11,7 +11,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">{{ trans('adminpanel.edit') }}</div>
 				<div class="panel-body">
-					{!! Form::model($page, array('method' => 'PATCH', 'action' => ['PageController@update', $page->id])) !!}
+					{!! Form::model($page, array('method' => 'PATCH', 'action' => ['Admin\PageController@update', $page->id])) !!}
 
 					@include('adminpanel.pages._form', ['submitButtonText' => trans('adminpanel.save')])
 

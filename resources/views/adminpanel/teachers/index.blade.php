@@ -20,7 +20,7 @@
 				<div class="panel-heading">
 					<div class="btn-block">
 						{!! Form::label('teachers', trans('adminpanel.teachers'), array('class' => 'btn btn-lg')) !!}
-						{!! Form::btnLink('<span class="icon-c-crown-plus"></span>'.trans('adminpanel.add'), action('TeacherController@create'), null, array('class'=>'btn btn-primary btn-md pull-right')) !!}
+						{!! Form::btnLink('<span class="icon-c-crown-plus"></span>'.trans('adminpanel.add'), action('Admin\TeacherController@create'), null, array('class'=>'btn btn-primary btn-md pull-right')) !!}
 					</div>
 				</div>
 				<div class="panel-body">
@@ -45,7 +45,7 @@
 						        {!! Form::btnLink('<span class="glyphicon glyphicon-edit"></span>', 'teachers/'. $teacher->id.'/edit', null, array('class'=>'btn btn-warning btn-sm'), '') !!}
 					        </td>
 					        <td>
-					        {!! Form::open(array('method' => 'DELETE', 'action' => ['TeacherController@destroy', $teacher->id])) !!}
+					        {!! Form::open(array('method' => 'DELETE', 'action' => ['Admin\TeacherController@destroy', $teacher->id])) !!}
 		       				{!! Form::btnLink('<span class="glyphicon glyphicon-remove"></span>', '', null, array('class'=>'btn btn-danger btn-sm'), '') !!}
 		       				{!! Form::close() !!}
 							</td>

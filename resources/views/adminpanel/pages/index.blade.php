@@ -19,7 +19,7 @@
 				<div class="panel-heading">
 					<div class="btn-block">
 						{!! Form::label('pages', trans('adminpanel.pages'), array('class' => 'btn btn-lg')) !!}
-						<a href="{{ action('PageController@create') }}">{!! Form::button(trans('adminpanel.add'), ['class' => 'btn btn-primary btn-md pull-right']) !!}</a>
+						<a href="{{ action('Admin\PageController@create') }}">{!! Form::button(trans('adminpanel.add'), ['class' => 'btn btn-primary btn-md pull-right']) !!}</a>
 					</div>
 				</div>
 				<div class="panel-body">
@@ -46,7 +46,7 @@
 						        {!! Form::btnLink('<span class="glyphicon glyphicon-edit"></span>', 'pages/'. $page->id.'/edit', null, array('class'=>'btn btn-warning btn-sm'), '') !!}
 					        </td>
 					        <td>
-					        {!! Form::open(array('method' => 'DELETE', 'action' => ['PageController@destroy', $page->id])) !!}
+					        {!! Form::open(array('method' => 'DELETE', 'action' => ['Admin\PageController@destroy', $page->id])) !!}
 					        {!! Form::btnLink('<span class="glyphicon glyphicon-remove"></span>', '', null, array('class'=>'btn btn-danger btn-sm'), '') !!}
 		       				{!! Form::close() !!}
 							</td>
