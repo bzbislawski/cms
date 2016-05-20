@@ -20,7 +20,7 @@
 					Możesz użyć poniższego formularzu, aby skontaktować się z obsługą techniczną.
 					<br/><br/>
 
-					{!! Form::open(array('action' => array('HomeController@send'))) !!}
+					{!! Form::open(array('action' => array('Admin\AdminController@send'))) !!}
 					<div class="form-group">
 			        	{!! Form::label('title', 'Tytuł:') !!}
 			        	{!! Form::text('title', 'Zgłoszenie ze strony ' .env('SITE_NAME'), ['class' => 'form-control', 'readonly' => 'readonly']) !!}

@@ -18,6 +18,8 @@
 // TODO: All links and url's need to be called either linnks or url
 // TODO: Analyze forms DELETE in adminpanel
 
+// TODO: Figure out how helper funcs work and use them for multilanguage website
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -26,27 +28,22 @@ Route::get('/hi', function () {
 });
 
 
-//main website
-
+//Main website
 Route::get('kontakt', 'WebsiteController@contact');
 Route::get('news', 'WebsiteController@news');
 Route::get('articles', 'WebsiteController@articles');
 
 
-//admin panel
-Route::get('home', 'HomeController@index');
-Route::post('home', 'HomeController@send');
+// Admin panel
+Route::group(['prefix' => 'admin'], function () {
+	Route::get('/', 'Admin\AdminController@index');
+	Route::post('/', 'Admin\AdminController@send');
 
-//Banners Controller
-Route::resource('home/banners', 'BannerController');
-//Teachers Controller
-Route::resource('home/teachers', 'TeacherController');
-//Articles Controller
-Route::resource('home/articles', 'ArticleController');
-//Page Controller
-Route::resource('home/pages', 'PageController');
-
-
+	Route::resource('banners', 'Admin\BannerController');
+	Route::resource('teachers', 'Admin\TeacherController');
+	Route::resource('articles', 'Admin\ArticleController');
+	Route::resource('pages', 'Admin\PageController');
+});
 
 // Authentication routes...
 Route::controllers([
