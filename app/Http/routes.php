@@ -13,7 +13,6 @@
 
 // TODO: Storing files with Storage Class
 // TODO: Give parent class for User and Teacher, so the methods are not reapeted stupidly
-// TODO: Fix link paths in all views
 // TODO: Fix paths to images
 // TODO: All links and url's need to be called either linnks or url
 // TODO: Analyze forms DELETE in adminpanel
