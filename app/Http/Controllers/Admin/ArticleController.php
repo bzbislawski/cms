@@ -56,7 +56,7 @@ class ArticleController extends Controller {
 
 
 		\Session::flash('flash_article_positive', trans('adminpanel.article_store'));
-		return redirect('home/articles');
+		return redirect()->action('Admin\ArticleController@index');
 	}
 
 	/**
@@ -110,7 +110,7 @@ class ArticleController extends Controller {
 		Article::destroy($id);
 		
 		\Session::flash('flash_article_positive', trans('adminpanel.article_delete'));
-		return redirect('home/articles');
+		return redirect()->action('Admin\ArticleController@index');
 	}
 
 }

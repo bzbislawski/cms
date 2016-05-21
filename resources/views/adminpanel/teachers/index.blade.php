@@ -20,7 +20,7 @@
 				<div class="panel-heading">
 					<div class="btn-block">
 						{!! Form::label('teachers', trans('adminpanel.teachers'), array('class' => 'btn btn-lg')) !!}
-						{!! Form::btnLink('<span class="icon-c-crown-plus"></span>'.trans('adminpanel.add'), action('Admin\TeacherController@create'), null, array('class'=>'btn btn-primary btn-md pull-right')) !!}
+							<a href="{{ action('Admin\TeacherController@create') }}">{!! Form::button(trans('adminpanel.add'), ['class' => 'btn btn-primary btn-md pull-right']) !!}</a>
 					</div>
 				</div>
 				<div class="panel-body">
@@ -40,13 +40,13 @@
 					      <tr>
 					      	<td>{{ $teacher->id}}</td>
 					        <td>{{ $teacher->name}}</td>
-					        <td>{{ $teacher->isPublished ? 'TAK' : 'NIE'}}</td>
+					        <td>{{ $teacher->isPublished ? trans('adminpanel.yes') : trans('adminpanel.no')}}</td>
 					        <td>
-						        {!! Form::btnLink('<span class="glyphicon glyphicon-edit"></span>', 'teachers/'. $teacher->id.'/edit', null, array('class'=>'btn btn-warning btn-sm'), '') !!}
+						        <a href="teachers/{{ $teacher->id }}/edit"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span></button></a>
 					        </td>
 					        <td>
 					        {!! Form::open(array('method' => 'DELETE', 'action' => ['Admin\TeacherController@destroy', $teacher->id])) !!}
-		       				{!! Form::btnLink('<span class="glyphicon glyphicon-remove"></span>', '', null, array('class'=>'btn btn-danger btn-sm'), '') !!}
+		       						<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
 		       				{!! Form::close() !!}
 							</td>
 					      </tr>

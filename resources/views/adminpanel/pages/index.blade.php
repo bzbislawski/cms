@@ -43,11 +43,11 @@
 					        <td>{{ $page->url}}</td>
 					        <td>{{ $page->isPublished ? trans('adminpanel.yes') : trans('adminpanel.no') }}</td>
 					        <td>
-						        {!! Form::btnLink('<span class="glyphicon glyphicon-edit"></span>', 'pages/'. $page->id.'/edit', null, array('class'=>'btn btn-warning btn-sm'), '') !!}
+						        <a href="pages/{{ $page->id }}/edit"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span></button></a>
 					        </td>
 					        <td>
 					        {!! Form::open(array('method' => 'DELETE', 'action' => ['Admin\PageController@destroy', $page->id])) !!}
-					        {!! Form::btnLink('<span class="glyphicon glyphicon-remove"></span>', '', null, array('class'=>'btn btn-danger btn-sm'), '') !!}
+					        	<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
 		       				{!! Form::close() !!}
 							</td>
 					      </tr>

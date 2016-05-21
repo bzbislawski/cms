@@ -51,7 +51,7 @@ class PageController extends Controller {
 		Page::create($request->all());
 
 		\Session::flash('flash_page_positive', trans('adminpanel.page_store')); 
-		return redirect('home/pages');
+		return redirect()->action('Admin\PageController@index');
 	}
 
 	/**
@@ -103,7 +103,7 @@ class PageController extends Controller {
 		Page::destroy($id);
 
 		\Session::flash('flash_page_positive', trans('adminpanel.page_delete'));
-		return redirect('home/pages');
+		return redirect()->action('Admin\PageController@index');
 	}
 
 }

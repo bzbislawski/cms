@@ -56,7 +56,7 @@ class BannerController extends Controller {
 		
 
 		\Session::flash('flash_banner_positive', trans('adminpanel.banner_store')); 
-		return redirect('home/banners');
+		return redirect()->action('Admin\BannerController@index');
 	}
 
 	/**
@@ -97,7 +97,7 @@ class BannerController extends Controller {
 		Banner::destroy($id);
 
 		\Session::flash('flash_banner_positive', trans('adminpanel.banner_delete'));
-		return redirect('home/banners');
+		return redirect()->action('Admin\BannerController@index');
 	}
 
 }

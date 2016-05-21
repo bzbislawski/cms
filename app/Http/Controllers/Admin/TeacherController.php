@@ -40,7 +40,7 @@ class TeacherController extends Controller {
 
 
 		\Session::flash('flash_teacher_positive', trans('adminpanel.teacher_store')); 
-		return redirect('home/teachers');
+		return redirect()->action('Admin\TeacherController@index');
 	}
 
 	
@@ -85,6 +85,6 @@ class TeacherController extends Controller {
 		
 
 		\Session::flash('flash_teacher_positive', trans('adminpanel.teacher_delete'));
-		return redirect('home/teachers');
+		return redirect()->action('Admin\TeacherController@index');
 	}
 }
