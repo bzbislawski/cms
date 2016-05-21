@@ -1,41 +1,39 @@
 <?php
-
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-//use Storage;
+use Storage;
 
 class Banner extends Model
 {
-    private static $imagePath = '/public/gallery/banner/';
 
     protected $table = 'banners';
 
     protected $fillable = ['title', 'text', 'text2', 'image', 'isPublished'];
 
+    /**
+     * Add file name to database, add file to storage, save all
+     * @param type $request 
+     * @return null
+     */
     public function addImage($request)
     {
         if ($request->file('image')->isValid())
         {
             $extension = $request->file('image')->getClientOriginalExtension();
-            
-            do{//in the future this loop could throw exception when disk is full
-                    $fileName = rand(111111,999999).'.'.$extension; // renaming image
-                    $isFileExist = file_exists(base_path() . self::$imagePath . $fileName);
-            }while($isFileExist == true);
+            $fileName = $this->id . '.' . $extension;
+            Storage::put('banners/' . $fileName, file_get_contents($request->file('image')->getRealPath()));
 
-            $request->file('image')->move(base_path() . self::$imagePath, $fileName);
-            //Storage::put($fileName, file_get_contents($request->file('image')));
             $this->image = $fileName;
             $this->save();
         }
     }
 
-    public static function deleteImage($id)
+    public function deleteImage($filename)
     {
-        $filename = Banner::where('id', '=',$id)->first()->image;
-        if($filename != "")
-            unlink(base_path() . self::$imagePath . $filename);
+        $path = 'banners/'. $filename;
+        if(Storage::has($path))
+            Storage::delete($path);
     }
 
 }

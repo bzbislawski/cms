@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Banner;
+use File;
+use Response;
 
 class WebsiteController extends Controller
 {
@@ -38,6 +40,21 @@ class WebsiteController extends Controller
     {
         $articles = Banner::all();
         return $articles;
+    }
+
+    public function images($directory, $filename)
+    {
+        $path = storage_path('app') . '/' . $directory .'/' . $filename;
+
+        if(!File::exists($path)) abort(404);
+
+        $file = File::get($path);
+        $type = File::mimeType($path);
+
+        $response = Response::make($file, 200);
+        $response->header("Content-Type", $type);
+
+        return $response;
     }
 
 

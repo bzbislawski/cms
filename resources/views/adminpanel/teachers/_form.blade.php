@@ -15,13 +15,13 @@
 
 @if($bladeName == 'update' && $teacher->image != "")
 <div class="form-group">
-	<img src="..\..\..\gallery\teacher\{!! $teacher->image !!}" class="img-thumbnail" alt="Photo" width="10%" height="10%"><br/>
+	<img src="{{url('/images/teachers/') }}/{!! $teacher->image !!}" class="img-thumbnail" alt="Photo" width="10%" height="10%"><br/>
 	{!! Form::submit(trans('adminpanel.deleteImage'), ['class' => 'btn btn-primary btn-sm', 'name' => 'delete']) !!}
 </div>
 @else
  <div class="form-group">
 	{!! Form::label('image', trans('adminpanel.image')) !!}
-	{!! Form::file('image', ['class' => 'form-control', 'name' => 'update' ]) !!}
+	{!! Form::file('image', ['class' => 'form-control', 'name' => 'image' ]) !!}
 </div>
 @endif
 

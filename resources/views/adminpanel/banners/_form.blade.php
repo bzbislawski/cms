@@ -1,6 +1,6 @@
 @if($bladeName == 'edit')
 <div class="form-group">
-    <img src="..\..\..\gallery\banner\{!! $banner->image !!}" class="img-thumbnail" alt="Banner" width="100%" height="100%"><br/>
+    <img src="{{url('/images/banners/') }}/{!! $banner->image !!}" class="img-thumbnail" alt="Banner" width="100%" height="100%"><br/>
 </div>
 @endif
 

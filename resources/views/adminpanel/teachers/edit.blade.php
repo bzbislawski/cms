@@ -25,11 +25,5 @@
 @endsection
 
 @section('footer')
-<script>
-$(document).ready(function(){
-    $("#delete").click(function(){
-        $("form").attr('action', 'http://'+document.location.hostname+'/home/teachers/photo');
-});
-});
-</script>
+
 @endsection

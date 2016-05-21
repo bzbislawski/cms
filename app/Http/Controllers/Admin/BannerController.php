@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 
 use App\Banner;
 use App\Http\Requests\BannerRequest;
-use App\Storage;
+use Storage;
 
 
 class BannerController extends Controller {
@@ -50,10 +50,9 @@ class BannerController extends Controller {
 	 */
 	public function store(BannerRequest $request)
 	{
-
-		$banner = new Banner($request->all());
+		$banner = new Banner($request->except(['image']));
+		$banner->save();
 		$banner->addImage($request);
-		
 
 		\Session::flash('flash_banner_positive', trans('adminpanel.banner_store')); 
 		return redirect()->action('Admin\BannerController@index');
@@ -93,8 +92,9 @@ class BannerController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		Banner::deleteImage($id);
-		Banner::destroy($id);
+		$banner = Banner::find($id);
+		$banner->deleteImage($banner->image);
+		$banner->delete();
 
 		\Session::flash('flash_banner_positive', trans('adminpanel.banner_delete'));
 		return redirect()->action('Admin\BannerController@index');

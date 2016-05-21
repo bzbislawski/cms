@@ -35,8 +35,8 @@ class TeacherController extends Controller {
 	public function store(TeacherRequest $request)
 	{
 		$teacher = new Teacher($request->except('image'));
-		$teacher->addImage($request);
 		$teacher->save();
+		$teacher->addImage($request);
 
 
 		\Session::flash('flash_teacher_positive', trans('adminpanel.teacher_store')); 
@@ -54,19 +54,21 @@ class TeacherController extends Controller {
 	public function update($id, TeacherRequest $request)
 	{
 		$teacher = Teacher::findOrFail($id);
+		//var_dump($request);exit;
 
-		if(isset($request['update']))
+		if(isset($request['Submit']))
 		{
 			$teacher->update($request->except('image'));
-			$teacher->addImage($request);
 			$teacher->save();
+			$teacher->addImage($request);
+
 
 			$message = trans('adminpanel.teacher_update');
 		}
 
 		if(isset($request['delete']))
 		{
-			Teacher::deleteImage($id);
+			$teacher->deleteImage($teacher->image);
 			$teacher->image = "";
 			$teacher->save();
 			
@@ -80,8 +82,9 @@ class TeacherController extends Controller {
 
 	public function destroy($id)
 	{
-		Teacher::deleteImage($id);
-		Teacher::destroy($id);
+		$teacher = Teacher::find($id);
+		$teacher->deleteImage($teacher->image);
+		$teacher->delete();
 		
 
 		\Session::flash('flash_teacher_positive', trans('adminpanel.teacher_delete'));

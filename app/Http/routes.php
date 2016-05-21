@@ -23,7 +23,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/hi', function () {
-    return storage_path();
+    return app_path();;
 });
 
 
@@ -31,7 +31,7 @@ Route::get('/hi', function () {
 Route::get('kontakt', 'WebsiteController@contact');
 Route::get('news', 'WebsiteController@news');
 Route::get('articles', 'WebsiteController@articles');
-
+Route::get('images/{directory}/{filename}', 'WebsiteController@images');
 
 // Admin panel
 Route::group(['prefix' => 'admin'], function () {
