@@ -37,14 +37,23 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					@if (Auth::check())
-						<li>{!! Html::link(action('Admin\AdminController@index'), trans('adminpanel.homePage')) !!}</li>
-						<li>{!! Html::link(action('Admin\ArticleController@index'), trans('adminpanel.articles')) !!}</li>
-						<li>{!! Html::link(action('Admin\BannerController@index'), trans('adminpanel.banners')) !!}</li>
-						<li>{!! Html::link(action('Admin\PageController@index'), trans('adminpanel.pages')) !!}</li>
-						<li>{!! Html::link(action('Admin\TeacherController@index'), trans('adminpanel.teachers')) !!}</li>
+						<li class="{{ isActiveRoute('') }}"> 
+							{!! Html::link(action('Admin\AdminController@index'), trans('adminpanel.homePage')) !!}
+						</li>
+						<li class="{{ areActiveRoutes(['admin.articles.index', 'admin.artcles.create']) }}">
+							{!! Html::link(action('Admin\ArticleController@index'), trans('adminpanel.articles')) !!}
+						</li>
+						<li class="{{ areActiveRoutes(['admin.banners.index', 'admin.banners.create', 'admin.banners.edit']) }}">
+							{!! Html::link(action('Admin\BannerController@index'), trans('adminpanel.banners')) !!}
+						</li>
+						<li class="{{ areActiveRoutes(['admin.pages.index', 'admin.pages.create', 'admin.pages.edit']) }}">
+							{!! Html::link(action('Admin\PageController@index'), trans('adminpanel.pages')) !!}
+						</li>
+						<li class="{{ areActiveRoutes(['admin.teachers.index', 'admin.teachers.create', 'admin.teachers.edit']) }}">
+							{!! Html::link(action('Admin\TeacherController@index'), trans('adminpanel.teachers')) !!}
+						</li>
 					@endif
 				</ul>
-
 
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
@@ -62,8 +71,6 @@
 			</div>
 		</div>
 	</nav>
-
-
 
 
 	@yield('content')
