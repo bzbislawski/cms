@@ -31,18 +31,19 @@ class AdminController extends Controller
 	}
 
 	//In the future later() method should be used
-	public function send()
+	public function send(Request $request)
 	{
-		$input = Request::all();
+		
+		//var_dump($request);
 
-		Mail::raw($input['text'], function($message) use ($input)
+		Mail::raw($request['text'], function($message) use ($request)
 		{
 		    $message->from(env('SITE_MAIL'), env('SITE_NAME'));
-		    if(isset($input['sendCC']))
-		    $message->to(env('SITE_AUTHOR_MAIL'))->subject($input['title'])->cc(env('SITE_MAIL'));
+		    if(isset($request['sendCC']))
+		    $message->to(env('SITE_ADMIN_MAIL'))->subject($request['title'])->cc(env('SITE_MAIL'));
 		    else
 		    {
-		    	$message->to(env('SITE_AUTHOR_MAIL'))->subject($input['title']);
+		    	$message->to(env('SITE_ADMIN_MAIL'))->subject($request['title']);
 		    }
 		});
 

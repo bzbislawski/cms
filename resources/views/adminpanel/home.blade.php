@@ -11,36 +11,44 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">Strona główna</div>
 				<div class="panel-body">
-					<h2><strong>Witamy w panelu administracyjnym!</strong></h2>
-					<h4>Kontakt z obsługą techniczną:</h4>
-					Telefon: {!! env('SITE_AUTHOR_PHONE') !!}
-					<br/>
-					E-mail: {!! Html::mailto(env('SITE_AUTHOR_MAIL')) !!}
-					<br/><br/>
-					Możesz użyć poniższego formularzu, aby skontaktować się z obsługą techniczną.
-					<br/><br/>
+					<div class="col-sm-12 text-center">
+					<h3><strong>Witamy w panelu administracyjnym!</strong></h3>
+					</div>
+					<div class="col-sm-6">
+						<div class="panel panel-default" style="margin-top:100px">
+		    				<div class="panel-body">
+								Masz problem? Zgłoś go! Wyślij wiadomość e-mail za pomocą formularza obok. Dane kontaktowe z administratorem:
+								<br/>
+								E-mail: {!! Html::mailto(env('SITE_ADMIN_MAIL')) !!}
+								<br/>
+								Telefon: <u>{!! env('SITE_ADMIN_PHONE') !!}</u>.
+							</div>
+						</div>
+					</div>
 
-					{!! Form::open(array('action' => array('Admin\AdminController@send'))) !!}
-					<div class="form-group">
-			        	{!! Form::label('title', 'Tytuł:') !!}
-			        	{!! Form::text('title', 'Zgłoszenie ze strony ' .env('SITE_NAME'), ['class' => 'form-control', 'readonly' => 'readonly']) !!}
-			        </div>
-			        <div class="form-group">
-			        	{!! Form::label('text', 'Wiadomość:') !!}
-			        	{!! Form::textarea('text', null, ['class' => 'form-control']) !!}
-			        </div>
+					<div class="col-sm-6">
+						{!! Form::open(array('action' => array('Admin\AdminController@send'))) !!}
+						<div class="form-group">
+				        	{!! Form::label('title', 'Tytuł:') !!}
+				        	{!! Form::text('title', 'Zgłoszenie ze strony ' .env('SITE_NAME'), ['class' => 'form-control', 'readonly' => 'readonly']) !!}
+				        </div>
+				        <div class="form-group">
+				        	{!! Form::label('text', 'Wiadomość:') !!}
+				        	{!! Form::textarea('text', null, ['class' => 'form-control']) !!}
+				        </div>
 
-		        	<div class="form-group">
-		        		{!! Form::checkbox('sendCC', null, null) !!}
-		        		
-			        	{!! Form::label('isPublished', 'Wyślij kopię wiadomości na adres: ' . env('SITE_MAIL')) !!} 
-			        </div>
+			        	<div class="form-group">
+			        		{!! Form::checkbox('sendCC', null, null) !!}
+			        		
+				        	{!! Form::label('isPublished', 'Wyślij kopię wiadomości na adres: ' . env('SITE_MAIL')) !!} 
+				        </div>
 
-			        <div class="form-group text-center">
-			        	{!! Form::submit('Wyślij', ['class' => 'btn btn-primary btn-lg']) !!}
-			        </div>
+				        <div class="form-group text-center">
+				        	{!! Form::submit('Wyślij', ['class' => 'btn btn-primary btn-md']) !!}
+				        </div>
 
-       				{!! Form::close() !!}
+	       				{!! Form::close() !!}
+	       			</div>
 				</div>
 			</div>
 		</div>

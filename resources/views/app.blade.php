@@ -55,7 +55,7 @@
 						<li class="{{ areActiveRoutes(['admin.teachers.index', 'admin.teachers.create', 'admin.teachers.edit']) }}">
 							{!! Html::link(action('Admin\TeacherController@index'), trans('adminpanel.teachers')) !!}
 						</li>
-						<li class="{{ areActiveRoutes(['admin.galleries.index', 'admin.galleries.create', 'admin.galleries.edit']) }}">
+						<li class="{{ areActiveRoutes(['admin.galleries.index', 'admin.galleries.create', 'admin.galleries.edit', 'admin.galleries.show']) }}">
 							{!! Html::link(action('Admin\GalleryController@index'), trans('adminpanel.galleries')) !!}
 						</li>
 					@endif
