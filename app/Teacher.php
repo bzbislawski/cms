@@ -26,7 +26,6 @@ class Teacher extends Model {
 	            Storage::put('teachers/' . $fileName, file_get_contents($request->file('image')->getRealPath()));
 
 	            $this->image = $fileName;
-	            var_dump($fileName);
 	            $this->save();
 	        }
 	    }

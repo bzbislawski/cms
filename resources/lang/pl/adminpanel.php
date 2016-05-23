@@ -30,6 +30,7 @@ return
 'banners' => 'Banery',
 'pages' => 'Strony',
 'teachers' => 'Nauczyciele',
+'galleries' => 'Galerie',
 
 
 
@@ -73,5 +74,8 @@ return
 'article_store' => 'Gratulacje! Artykuł został dodany.',
 'article_update' => 'Gratulacje! Artykuł został zaktualizowany.',
 'article_delete' => 'Gratulacje! Artykuł został usunięty.',
+'gallery_store' => 'Gratulacje! Galeeria została dodana.',
+'gallery_update' => 'Gratulacje! Galeeria została zaktualizowana.',
+'gallery_delete' => 'Gratulacje! Galeeria została usunięta.',
 
 ];

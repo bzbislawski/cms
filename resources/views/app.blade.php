@@ -8,7 +8,10 @@
 
 	<link href="/css/app.css" rel="stylesheet">
 
-	<script src="../../../ckeditor/ckeditor.js"></script>
+	<script src="{{url('ckeditor/ckeditor.js')}}"></script>
+
+	<link href="{{url('node_modules/lity/dist/lity.css')}}" rel="stylesheet">
+
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
@@ -52,6 +55,9 @@
 						<li class="{{ areActiveRoutes(['admin.teachers.index', 'admin.teachers.create', 'admin.teachers.edit']) }}">
 							{!! Html::link(action('Admin\TeacherController@index'), trans('adminpanel.teachers')) !!}
 						</li>
+						<li class="{{ areActiveRoutes(['admin.galleries.index', 'admin.galleries.create', 'admin.galleries.edit']) }}">
+							{!! Html::link(action('Admin\GalleryController@index'), trans('adminpanel.galleries')) !!}
+						</li>
 					@endif
 				</ul>
 
@@ -79,6 +85,7 @@
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="{{url('node_modules/lity/dist/lity.js')}}"></script>
 
 	<script>
 		$('.alert').delay(5000).slideUp(300);

@@ -30,6 +30,7 @@ return
 'banners' => 'Banners',
 'pages' => 'Pages',
 'teachers' => 'Teachers',
+'galleries' => 'Galleries',
 
 
 
@@ -73,5 +74,8 @@ return
 'article_store' => 'Congratulations, article has been added.',
 'article_update' => 'Congratulations, article has been updated',
 'article_delete' => 'Congratulations, article has been deleted',
+'gallery_store' => 'Congratulations, gallery has been added.',
+'gallery_update' => 'Congratulations, gallery has been updated',
+'gallery_delete' => 'Congratulations, gallery has been deleted',
 
 ];

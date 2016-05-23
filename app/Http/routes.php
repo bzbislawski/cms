@@ -23,7 +23,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/hi', function () {
-    return app_path();;
+	App::setLocale('pl');
+    return test();
 });
 
 
@@ -42,6 +43,8 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::resource('teachers', 'Admin\TeacherController');
 	Route::resource('articles', 'Admin\ArticleController');
 	Route::resource('pages', 'Admin\PageController');
+	Route::resource('galleries', 'Admin\GalleryController');
+	Route::post('galleries/{photography}', 'Admin\GalleryController@deletePhotography');
 });
 
 // Authentication routes...
