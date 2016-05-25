@@ -20,9 +20,8 @@ class WebsiteController extends Controller
      */
     public function index()
     {
-        //$banners = Banner::all();
         $banners = Banner::where('isPublished', '=', 1)->get();
-        return view('welcome', compact('banners'));
+        return view('home', compact('banners'));
     }
 
 

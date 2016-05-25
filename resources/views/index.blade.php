@@ -1,265 +1,297 @@
 <!DOCTYPE html>
-
-<html lang="en-US">
+<html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="ThemeStarz">
-
-    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
-    <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/bootstrap-select.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/jquery.slider.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/owl.carousel.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/owl.transitions.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
-
-    <title>Zoner | Slider Homepage</title>
-
+    <meta charset="UTF-8">
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Home</title>
+    <!-- ========== CSS INCLUDES ========== -->
+    <link rel="stylesheet" href="assets/css/master.css">
+     
 </head>
+<body>
 
-
-@yield('bodyTag')
-{{--<body class="page-homepage navigation-fixed-top page-slider" id="page-top" data-spy="scroll" data-target=".navigation" data-offset="90">--}}
-{{--  <body class="page-sub-page page-contact" id="page-top" style="position: relative; min-height: 100%; top: 0px;"> --}}
-
-<!-- Wrapper -->
-<div class="wrapper">
-
-    <div class="navigation">
-        <div class="secondary-navigation">
+    <!-- ================================ -->
+    <!-- ========== HEADER ========== -->
+    <!-- ================================ -->
+    <header id="header" class="header1" >
+        
+        <!-- Begin Top-Header -->
+        <div id="topContainer">
             <div class="container">
-                <div class="contact">
-                    <figure><strong>Phone:</strong>+1 810-991-3842</figure>
-                    <figure><strong>Email:</strong>zoner@example.com</figure>
-                </div>
-                <div class="user-area">
-                    <div class="actions">
-                        <a href="create-agency.html" class="promoted">Create Agency</a>
-                        <a href="create-account.html" class="promoted"><strong>Register</strong></a>
-                        <a href="sign-in.html">Sign In</a>
-                    </div>
-                    <div class="language-bar">
-                        <a href="#" class="active"><img src="../assets/img/flags/gb.png" alt=""></a>
-                        <a href="#"><img src="../assets/img/flags/de.png" alt=""></a>
-                        <a href="#"><img src="../assets/img/flags/es.png" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <header class="navbar" id="top" role="banner">
+                    <div class="topContent">
+                        <ul class="social-icons">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            </ul><!--end social-icons -->
+                                            
+                            <div class="contact-details">
+                                <ul>
+                                    <li>
+                                        <span class="fa fa-clock-o" ></span>
+                                        Mon - Fri : 8:00 - 12:00    
+                                    </li>
+                                                    
+                                    <li>
+                                        <span class="fa fa-phone"></span>
+                                        + 138 04 111 7562
+                                    
+                                                    
+                                    <li>
+                                        <span class="fa fa-envelope"></span>
+                                        <a href="#">contact@mywebsite.com</a>
+                                    </li>
+                                </ul>
+                            </div><!--end contact-details --></div>
+                    <a href="#" class="headerButton"><i class="fa fa-angle-down"></i></a>
+                </div><!--end container -->
+            </div><!--end topContainer -->
+        <!--end Top-Header -->
+
+            <!-- Begin Nav -->
+            <nav class="navbar clearfix">
+              <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <div class="navbar-brand nav" id="brand">
-                        <a href="index-google-map-fullscreen.html"><img src="../assets/img/logo.png" alt="brand"></a>
-                    </div>
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand "  href="index-2.html">
+                    <img src="assets/img/header/logo.png" class="fadeInL-Big" alt="LOGO">
+                  </a>
                 </div>
-                <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
-                    <ul class="nav navbar-nav">
-                        <li><a href="/">Homepage</a></li>
-                        <li><a href="/news">News</a></li>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse fade " id="bs-example-navbar-collapse-1">
+                    <nav class="mainMenu fadeUp-menu">
+                        <ul>
+                            <li>
+                                <a href="index-2.html">
+                                    <img src="assets/img/Icons/home.png" alt="home">
+                                    Home <span>Your child</span> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="assets/img/Icons/classes.png" alt="home">
+                                    Classes 
+                                    <span>Preschool</span> 
+                                </a>
+                                <ul>
+                                    <li><a href="classe.html">Classes page layout</a></li>
+                                    <li><a href="singleClasse.html">Single classe layout</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="assets/img/Icons/teachers.png" alt="home">
+                                    Teachers <span>Best educators</span> 
+                                </a>
+                                <ul>
+                                    <li><a href="teachers.html">Teachers page layout</a></li>
+                                    <li><a href="singleTeacher.html">Single teacher page</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="assets/img/Icons/pages.png" alt="home">
+                                    Pages 
+                                    <span>All pages</span> 
+                                </a>
+                                <ul>
+                                    <li><a href="about.html">About us</a></li>
+                                    <li><a href="services.html">Our services</a></li>
+                                    <li><a href="gallery.html">Gallery</a></li>
+                                    <li><a href="pricingPlans.html">Pricing plans</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="shop.html">Shop</a></li>
+                                    <li><a href="shopSingle.html">Shop single</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="assets/img/Icons/blog.png" alt="home">
+                                    Blog 
+                                    <span>Write news</span>
+                                </a>
+                                <ul>
+                                    <li><a href="blog1.html">Blog page layout</a></li>
+                                    <li><a href="blogSingle.html">Single post page</a></li>
+                                    <li><a href="blogPageLayout.html">Blog page</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav><!--end nav -->
+                </div><!-- /navbar-collapse -->
+              </div><!-- /container-->
+            </nav><!--end navbar -->
+    </header>
+    <!-- ================================ -->
+    <!-- ========== END OF HEADER  ========== -->
+    <!-- ================================ -->
 
-                        <li class="has-child"><a href="#">Properties</a>
-                            <ul class="child-navigation">
-                                <li><a href="property-detail.html">Property Detail</a></li>
-                                <li><a href="properties-listing.html">Masonry Listing</a></li>
-                                <li><a href="properties-listing-grid.html">Grid Listing</a></li>
-                                <li><a href="properties-listing-lines.html">Lines Listing</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-child"><a href="#">Pages</a>
-                            <ul class="child-navigation">
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="agent-detail.html">Agent Detail</a></li>
-                                <li><a href="invoice-print.html">Invoice</a></li>
-                                <li><a href="profile.html">Profile</a></li>
-                                <li><a href="my-properties.html">My Properties</a></li>
-                                <li><a href="bookmarked.html">Bookmarked Properties</a></li>
-                                <li><a href="create-account.html">Create Account</a></li>
-                                <li><a href="create-agency.html">Create Agency</a></li>
-                                <li><a href="sign-in.html">Sign In</a></li>
-                                <li class="has-child"><a href="#">Error Pages</a>
-                                    <ul class="child-navigation">
-                                        <li><a href="403.html">403</a></li>
-                                        <li><a href="404.html">404</a></li>
-                                        <li><a href="500.html">500</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="faq.html">FAQ</a></li>
-                                <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                                <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                                <li><a href="sticky-footer.html">Sticky Footer</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
-                                <li><a href="timeline.html">Timeline</a></li>
-                                <li><a href="terms-conditions.html">Terms & Conditions</a></li>
-                                <li><a href="rtl.html">RTL Support</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-child"><a href="#">Agents & Agencies</a>
-                            <ul class="child-navigation">
-                                <li><a href="agents-listing.html">Agents Listing</a></li>
-                                <li><a href="agent-detail.html">Agent Detail</a></li>
-                                <li><a href="agencies-listing.html">Agencies Listing</a></li>
-                                <li><a href="agency-detail.html">Agency Detail</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="submit.html">Submit</a></li>
-                        <li class="has-child"><a href="#">Blog</a>
-                            <ul class="child-navigation">
-                                <li><a href="blog.html">Blog Listing</a></li>
-                                <li><a href="blog-detail.html">Blog Post Detail</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="kontakt">Contact</a></li>
-                    </ul>
-                </nav><!-- /.navbar collapse-->
-                <div class="add-your-property">
-                    <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
-                </div>
-            </header><!-- /.navbar -->
-        </div><!-- /.container -->
-    </div><!-- /.navigation -->
 
 
-    @yield('content')
 
 
-    <!-- Page Footer -->
-    <footer id="page-footer">
-        <div class="inner">
-            <aside id="footer-main">
+
+
+
+
+
+@yield('content')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ================================ -->
+    <!-- ========== START FOOTER  ========== -->
+    <!-- ================================ -->
+    <section class="sectionPadding footer" style="background:#f9f9f9;" >
+        <footer  >
+            <div class="footerContent">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-3 col-sm-3">
-                            <article>
+                        <div class="col-sm-4">
+                            <div class="widget aboutUs">
                                 <h3>About Us</h3>
-                                <p>Vel fermentum ipsum. Suspendisse quis molestie odio. Interdum et malesuada fames ac ante ipsum
-                                    primis in faucibus. Quisque aliquet a metus in aliquet. Praesent ut turpis posuere, commodo odio
-                                    id, ornare tortor
-                                </p>
-                                <hr>
-                                <a href="#" class="link-arrow">Read More</a>
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>Recent Properties</h3>
-                                <div class="property small">
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="../assets/img/properties/property-06.jpg">
-                                        </div>
-                                    </a>
-                                    <div class="info">
-                                        <a href="property-detail.html"><h4>2186 Rinehart Road</h4></a>
-                                        <figure>Doral, FL 33178 </figure>
-                                        <div class="tag price">$ 72,000</div>
-                                    </div>
-                                </div><!-- /.property -->
-                                <div class="property small">
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="../assets/img/properties/property-09.jpg">
-                                        </div>
-                                    </a>
-                                    <div class="info">
-                                        <a href="property-detail.html"><h4>2479 Murphy Court</h4></a>
-                                        <figure>Minneapolis, MN 55402</figure>
-                                        <div class="tag price">$ 36,000</div>
-                                    </div>
-                                </div><!-- /.property -->
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>Contact</h3>
-                                <address>
-                                    <strong>Your Company</strong><br>
-                                    4877 Spruce Drive<br>
-                                    West Newton, PA 15089
-                                </address>
-                                +1 (734) 123-4567<br>
-                                <a href="#">hello@example.com</a>
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>Useful Links</h3>
-                                <ul class="list-unstyled list-links">
-                                    <li><a href="#">All Properties</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Login and Register Account</a></li>
-                                    <li><a href="#">FAQ</a></li>
-                                    <li><a href="#">Terms and Conditions</a></li>
+                                <div class="textWidget">        
+                                    <p>Fusce sed nibh porttitor, scelerisque elit id, pret
+                                    justo. Integer venenatis tempus nisi non varius. </p>
+                                    <p>Sed dui enim, lobortis et tempor sed, varius quis.
+                                    pellentesque ligula tellus, elementum sit amet 
+                                    purus at, pharetra faucibus erat. Sed fermentum 
+                                    accumsan ipsum, non vestibulum nulla iaculis in.</p>
+                                    <div class="childTxt col-sm-8">
+                                        <p><span>Your child happy:</span> enroll your
+                                        child right now to my kindergarten</p>
+                                        <p><span>Ideal for Pre-School</span> this theme it’s
+                                        ideal and perfect for pre-schools</p>
+                                    </div><!--end childTxt -->
+                                    <img src="assets/img/content/footericon.png" alt="">
+                                </div><!--end textWidget -->
+                            </div><!--end widget -->
+                        </div><!--end col-sm-4 -->
+                        
+                        <div class="col-sm-3 col-sm-offset-1">
+                            <div class="widget galleryWidget galleryPopup">
+                                <h3>Gallery Photos</h3> 
+                                <ul>    
+                                    <li><a href="assets/img/Images/photodune-4736579-boy-drawing-xs.jpg"><img src="assets/img/content/ims1.jpg" alt=""></a></li>
+                                    <li><a href="assets/img/Images/photodune-4736468-little-learner-xs.jpg"><img src="assets/img/content/ims2.jpg" alt=""></a></li>
+                                    <li><a href="assets/img/Images/photodune-4372078-cute-friends-xs.jpg"><img src="assets/img/content/ims3.jpg" alt=""></a></li>
+                                    <li><a href="assets/img/Images/photodune-272404-two-little-girls-and-female-teacher-in-kindergarten-xs.jpg"><img src="assets/img/content/ims4.jpg" alt=""></a></li>
+                                    <li><a href="assets/img/Images/photodune-4908998-smiling-educator-with-boy-xs.jpg"><img src="assets/img/content/ims5.jpg" alt=""></a></li>
+                                    <li><a href="assets/img/Images/photodune-5013472-pupils-at-lesson-l.jpg"><img src="assets/img/content/ims6.jpg" alt=""></a></li>
+                                    <li><a href="assets/img/Images/photodune-313960-kindergarten-teacher-helping-students-learn-writing-skills-xs.jpg"><img src="assets/img/content/ims7.jpg" alt=""></a></li>
+                                    <li><a href="assets/img/Images/photodune-4604059-young-family-paint-easter-eggs-xs.jpg"><img src="assets/img/content/ims8.jpg" alt=""></a></li>
+                                    
+                                    <li><a href="assets/img/Images/photodune-4736579-boy-drawing-xs.jpg"><img src="assets/img/content/ims1.jpg" alt=""></a></li>
+                                    <li><a href="assets/img/Images/photodune-4736468-little-learner-xs.jpg"><img src="assets/img/content/ims2.jpg" alt=""></a></li>
+                                    <li><a href="assets/img/Images/photodune-4372078-cute-friends-xs.jpg"><img src="assets/img/content/ims3.jpg" alt=""></a></li>
+                                    <li><a href="assets/img/Images/photodune-272404-two-little-girls-and-female-teacher-in-kindergarten-xs.jpg"><img src="assets/img/content/ims4.jpg" alt=""></a></li>
+                                    <li><a href="assets/img/Images/photodune-4908998-smiling-educator-with-boy-xs.jpg"><img src="assets/img/content/ims5.jpg" alt=""></a></li>
+                                    <li><a href="assets/img/Images/photodune-5013472-pupils-at-lesson-l.jpg"><img src="assets/img/content/ims6.jpg" alt=""></a></li>
+                                    <li><a href="assets/img/Images/photodune-313960-kindergarten-teacher-helping-students-learn-writing-skills-xs.jpg"><img src="assets/img/content/ims7.jpg" alt=""></a></li>
+                                    <li><a href="assets/img/Images/photodune-4604059-young-family-paint-easter-eggs-xs.jpg"><img src="assets/img/content/ims8.jpg" alt=""></a></li>
                                 </ul>
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                    </div><!-- /.row -->
-                </div><!-- /.container -->
-            </aside><!-- /#footer-main -->
-            <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
-            <aside id="footer-copyright">
-                <div class="container">
-                    <span>Copyright © 2013. All Rights Reserved.</span>
-                    <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
-                </div>
-            </aside>
-        </div><!-- /.inner -->
-    </footer>
-    <!-- end Page Footer -->
+                            </div><!--end widget -->
+                        </div><!--end col-sm-4 -->
+                        
+                        <div class="col-sm-3 col-sm-offset-1">
+                            <div class="widget">        
+                                    <h3>Tag CLoud</h3>
+                                    <div class="tagcloud">
+                                        <a href="#">web-design</a>
+                                        <a href="#">music</a>
+                                        <a href="#">photography</a>
+                                        <a href="#">blog</a>
+                                        <a href="#">photography</a>
+                                        <a href="#">web-design</a>
+                                        <a href="#">blog</a>
+                                        <a href="#">web-design</a>
+                                        <a href="#">music</a>
+                                        <a href="#">photography</a>
+                                        <a href="#">blog</a>
+                                        <a href="#">themes wordpress</a>
+                                        <a href="#">audio</a>
+                                        <a href="#">audio player</a>
+                                        <a href="#">photography</a>
+                                        <a href="#">web-design</a>
+                                        <a href="#">blog</a>
+                                        <a href="#">music</a>
+                                        <a href="#">photography</a>
+                                        <a href="#">blog</a>
+                                        <a href="#">web-design</a>
+                                        <a href="#">music</a>
+                                        <a href="#">photography</a>
+                                    </div><!--tagCloud -->
+                            </div><!--end widget -->
+                        </div><!--end col-sm-4 -->
+                    </div><!--end row -->
+                </div><!--end container -->
+            </div><!--end footerContent -->
+        </footer>
+    </section>
+    
+<div id="" style="background-color: #fa6f57;padding: 20px 0;color: #fff;">
+    <div class="container" >
+        <div class="col-md-6">
+            <span class="pull-left">Copyright © 2016 Name of Company. All rights reserved.
+            <br>Design and implementation: <a href="mailto:bzbislawski@gmail.com" style="color:#FFFFFF">Bartosz Zbislawski</a></span>
+        </div>
+        <div class="col-md-6">
+            <span class="pull-right">CMS - content management system</span><br/>
+            <span class="pull-right"><a href="#header" style="color:#FFFFFF">GO TOP</a></span>
+        </div>
+    </div>
 </div>
 
-<div id="overlay"></div>
 
 
 
-<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
-<script type="text/javascript" src="../assets/js/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="../assets/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../assets/js/smoothscroll.js"></script>
-<script type="text/javascript" src="../assets/js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="../assets/js/bootstrap-select.min.js"></script>
-<script type="text/javascript" src="../assets/js/jquery.validate.min.js"></script>
-<script type="text/javascript" src="../assets/js/jquery.placeholder.js"></script>
-<script type="text/javascript" src="../assets/js/icheck.min.js"></script>
-<script type="text/javascript" src="../assets/js/jquery.vanillabox-0.1.5.min.js"></script>
-<script type="text/javascript" src="../assets/js/retina-1.1.0.min.js"></script>
-<script type="text/javascript" src="../assets/js/custom.js"></script>
-<!--[if gt IE 8]>
-<script type="text/javascript" src="assets/js/ie.js"></script>
-<![endif]-->
-
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<script type="text/javascript" src="../assets/js/markerwithlabel_packed.js"></script>
-<script type="text/javascript" src="../assets/js/infobox.js"></script>
-<script type="text/javascript" src="../assets/js/jshashtable-2.1_src.js"></script>
-<script type="text/javascript" src="../assets/js/jquery.numberformatter-1.2.3.js"></script>
-<script type="text/javascript" src="../assets/js/tmpl.js"></script>
-<script type="text/javascript" src="../assets/js/jquery.dependClass-0.1.js"></script>
-<script type="text/javascript" src="../assets/js/draggable-0.1.js"></script>
-<script type="text/javascript" src="../assets/js/jquery.slider.js"></script>
 
 
 
-<script type="text/javascript" src="../assets/js/jquery.raty.min.js"></script>
-<script type="text/javascript" src="../assets/js/jquery.magnific-popup.min.js"></script>
-<script type="text/javascript" src="../assets/js/jquery.fitvids.js"></script>
 
-<script type="text/javascript" src="../assets/js/custom-map.js"></script>
-@yield('footer')
-<script>
-    _latitude = 40.780388; 
-    _longitude = -73.966985;
-    google.maps.event.addDomListener(window, 'load', contactUsMap(_latitude,_longitude));
-</script>
 
+
+    <!-- ================================================== -->
+    <!-- =============== START JQUERY SCRIPTS ================ -->
+    <!-- ================================================== -->
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!--[if lte IE 9 ]>
+        <script src="assets/js/placeholder.js"></script>
+        <script>
+            jQuery(function() {
+                jQuery('input, textarea').placeholder();
+            });
+        </script>
+    <![endif]-->
+    
+    <!-- ================================================== -->
+    <!-- =============== END JQUERY SCRIPTS ================ -->
+    <!-- ================================================== -->
+    
 </body>
 </html>
