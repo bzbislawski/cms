@@ -274,6 +274,73 @@
 	<!-- ================================ -->
 	<!-- ========== END PURCHASE  ========== -->
 	<!-- ================================ -->
+	<!-- ================================ -->
+	<!-- ========== BEGIN PRESENTATION  ========== -->
+	<!-- ================================ -->
+	<section class="presentation" >
+		<div class="container">
+			<div class="row">
+				<ul class="list-small-features clearfix">
+						<li class="col-lg-4 col-md-6 col-sm-6 col-xs-12 ">
+							<img src="assets/img/Icons/Compas.png" alt="">
+							<h3>Learn With Best Teachers</h3>
+							
+							<p>Lorem ipsum dolor sit amet, 
+							consectetur adipiscing elit. Ut vitae
+							ipsum nibh. Nunc eget.</p>
+						</li>
+						<li class="col-lg-4 col-md-6 col-sm-6 col-xs-12  ">
+							<img src="assets/img/Icons/Infinity-Loop.png" alt="">
+							<h3>Playing With Hids</h3>
+							
+							<p>Lorem ipsum dolor sit amet, 
+							consectetur adipiscing elit. Ut vitae
+							ipsum nibh. Nunc eget.</p>
+						</li>
+						<li class="col-lg-4 col-md-6 col-sm-6 col-xs-12 ">
+							<img src="assets/img/Icons/Pensils.png" alt="">
+							<h3>We Love Math & Drawing</h3>
+							
+							<p>Lorem ipsum dolor sit amet, 
+							consectetur adipiscing elit. Ut vitae
+							ipsum nibh. Nunc eget.</p>
+						</li>
+						<li class="col-lg-4 col-md-6 col-sm-6 col-xs-12 ">
+							<img src="assets/img/Icons/Chat.png" alt="">
+							<h3>Happy Social Group</h3>
+							
+							<p>Lorem ipsum dolor sit amet, 
+							consectetur adipiscing elit. Ut vitae
+							ipsum nibh. Nunc eget.</p>
+						</li>
+						<li class="col-lg-4 col-md-6 col-sm-6 col-xs-12 ">
+							<img src="assets/img/Icons/Mail.png" alt="">
+							<h3>Do Your Homework</h3>
+							
+							<p>Lorem ipsum dolor sit amet, 
+							consectetur adipiscing elit. Ut vitae
+							ipsum nibh. Nunc eget.</p>
+						</li>
+						<li class="col-lg-4 col-md-6 col-sm-6 col-xs-12 ">
+							<img src="assets/img/Icons/Watches.png" alt="">
+							<h3>Time For Recreation</h3>
+							
+							<p>Lorem ipsum dolor sit amet, 
+							consectetur adipiscing elit. Ut vitae
+							ipsum nibh. Nunc eget.</p>
+						</li>
+					</ul>
+				
+				</div> <!-- end row -->
+			</div><!--end row -->
+			
+	</section>
+	<!-- ================================ -->
+	<!-- ==========  END OF PRESENTATION  ========== -->
+	<!-- ================================ -->
+
+
+
 
 
  @endsection

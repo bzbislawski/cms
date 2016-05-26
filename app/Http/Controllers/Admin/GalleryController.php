@@ -53,24 +53,7 @@ class GalleryController extends Controller
     {
         $gallery = new Gallery($request->except(['image']));
         $gallery->save();
-
-        if($request->hasFile('image'))
-        {
-            foreach($request->file("image") as $file) {
-                if($file->isValid())
-                {
-                    $photo = new Photography;
-                    $photo->gallery_id = $gallery->id;
-                    $photo->save();
-                    $extension = $file->getClientOriginalExtension();
-                    $fileName = $photo->id . '.' . $extension;
-                    Storage::put('photos/' . $fileName, file_get_contents($file->getRealPath()));
-                    $photo->image = $fileName;
-                    $photo->save();
-
-                }
-            }
-        }
+        $gallery->addImage($request);
 
         \Session::flash('flash_gallery_positive', trans('adminpanel.gallery_store')); 
         return redirect()->action('Admin\GalleryController@index');
@@ -84,8 +67,9 @@ class GalleryController extends Controller
      */
     public function show($id)
     {
+        $gallery = Gallery::find($id);
         $photos = Photography::where('gallery_id', '=', $id)->get();
-        return view('adminpanel.galleries.show', compact('photos'));
+        return view('adminpanel.galleries.show', compact('photos', 'gallery'));
     }
 
     /**
@@ -96,7 +80,8 @@ class GalleryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $gallery = Gallery::find($id);
+        return view('adminpanel.galleries.edit', compact('gallery'));
     }
 
     /**
@@ -108,7 +93,13 @@ class GalleryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $gallery = Gallery::findOrFail($id);
+        $gallery->update($request->except('image'));
+        $gallery->save();
+        $gallery->addImage($request);
+
+        \Session::flash('flash_gallery_positive', trans('adminpanel.gallery_update'));
+        return redirect()->action('Admin\GalleryController@show', $gallery->id);
     }
 
     /**

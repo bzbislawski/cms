@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Storage;
 
 class Gallery extends Model
 {
@@ -18,5 +19,26 @@ class Gallery extends Model
 	public function photography()
     {
         return $this->hasMany('App\Photography');
+    }
+
+    public function addImage($request)
+    {
+        if($request->hasFile('image'))
+        {
+            foreach($request->file("image") as $file) {
+                if($file->isValid())
+                {
+                    $photo = new Photography;
+                    $photo->gallery_id = $this->id;
+                    $photo->save();
+                    $extension = $file->getClientOriginalExtension();
+                    $fileName = $photo->id . '.' . $extension;
+                    Storage::put('photos/' . $fileName, file_get_contents($file->getRealPath()));
+                    $photo->image = $fileName;
+                    $photo->save();
+
+                }
+            }
+        }
     }
 }

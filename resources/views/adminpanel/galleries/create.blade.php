@@ -10,7 +10,7 @@
 				<div class="panel-body">
 					{!! Form::open(array('action' => array('Admin\GalleryController@store'),'files'=>true)) !!}
 			        
-			        @include('adminpanel.galleries._form', ['submitButtonText' => trans('adminpanel.add'), 'bladeName' => 'create'])
+			        @include('adminpanel.galleries._form', ['submitButtonText' => trans('adminpanel.add')])
 
        				{!! Form::close() !!}
 				</div>
