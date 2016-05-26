@@ -14,7 +14,7 @@
 
 //Main website
 Route::get('', 'WebsiteController@index');
-Route::get('kontakt', 'WebsiteController@contact');
+Route::get('contact', 'WebsiteController@contact');
 Route::get('news', 'WebsiteController@news');
 Route::get('articles', 'WebsiteController@articles');
 Route::get('images/{directory}/{filename}', 'WebsiteController@images');

@@ -277,3 +277,20 @@
 
 
  @endsection
+
+ @section('footer')
+  <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!--[if lte IE 9 ]>
+        <script src="assets/js/placeholder.js"></script>
+        <script>
+            jQuery(function() {
+                jQuery('input, textarea').placeholder();
+            });
+        </script>
+    <![endif]-->
+
+@endsection
