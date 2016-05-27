@@ -13,23 +13,28 @@
 
 
 //Main website
-Route::get('', 'WebsiteController@index');
-Route::get('contact', 'WebsiteController@contact');
-Route::get('news', 'WebsiteController@news');
-Route::get('articles', 'WebsiteController@articles');
+Route::group(['middleware' => 'footer'], function () {
+	Route::get('', 'WebsiteController@index');
+	Route::get('contact', 'WebsiteController@contact');
+	Route::get('news', 'WebsiteController@news');
+	Route::get('articles', 'WebsiteController@articles');
+	Route::get('gallery', 'WebsiteController@gallery');
+});
+
+// Images view
 Route::get('images/{directory}/{filename}', 'WebsiteController@images');
 
 // Admin panel
-Route::group(['prefix' => 'admin'], function () {
-	Route::get('/', 'Admin\AdminController@index');
-	Route::post('/', 'Admin\AdminController@send');
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+	Route::get('/', 'AdminController@index');
+	Route::post('/', 'AdminController@send');
 
-	Route::resource('banners', 'Admin\BannerController');
-	Route::resource('teachers', 'Admin\TeacherController');
-	Route::resource('articles', 'Admin\ArticleController');
-	Route::resource('pages', 'Admin\PageController');
-	Route::resource('galleries', 'Admin\GalleryController');
-	Route::post('galleries/{photography}', 'Admin\GalleryController@deletePhotography');
+	Route::resource('banners', 'BannerController');
+	Route::resource('teachers', 'TeacherController');
+	Route::resource('articles', 'ArticleController');
+	Route::resource('pages', 'PageController');
+	Route::resource('galleries', 'GalleryController');
+	Route::post('galleries/{photography}', 'GalleryController@deletePhotography');
 });
 
 // Authentication routes...

@@ -8,20 +8,34 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Banner;
+use App\Photography;
+use App\Gallery;
 use File;
 use Response;
+use Request as Req;
+use View;
 
 class WebsiteController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
+
+    public function __construct()
+    {
+        $photos = Req::get('photos');
+        View::share('photos', $photos);
+    }
+
     public function index()
     {
         $banners = Banner::where('isPublished', '=', 1)->get();
+
         return view('home', compact('banners'));
+    }
+
+    public function gallery()
+    {
+        //get one photo from each gallery then return it to view
+        $galleries = Gallery::all();
+        return view('gallery', compact('galleries'));
     }
 
 

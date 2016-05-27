@@ -8,7 +8,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<div class="btn-block">
-						{!! Form::label('galleries', trans('adminpanel.galleries'), array('class' => 'btn btn-lg')) !!}
+						{!! Form::label('galleries', $gallery->title, array('class' => 'btn btn-lg')) !!}
 						<a href="{{ action('Admin\GalleryController@edit', $gallery->id) }}">
 							{!! Form::button(trans('adminpanel.add'), ['class' => 'btn btn-primary btn-md pull-right']) !!}
 						</a>

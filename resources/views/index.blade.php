@@ -61,7 +61,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand "  href="index-2.html">
+                  <a class="navbar-brand "  href="/">
                     <img src="assets/img/header/logo.png" class="fadeInL-Big" alt="LOGO">
                   </a>
                 </div>
@@ -71,7 +71,7 @@
                     <nav class="mainMenu fadeUp-menu">
                         <ul>
                             <li>
-                                <a href="index-2.html">
+                                <a href="/">
                                     <img src="assets/img/Icons/home.png" alt="home">
                                     Home <span>Your child</span> 
                                 </a>
@@ -106,9 +106,9 @@
                                 <ul>
                                     <li><a href="about.html">About us</a></li>
                                     <li><a href="services.html">Our services</a></li>
-                                    <li><a href="gallery.html">Gallery</a></li>
+                                    <li><a href="gallery">Gallery</a></li>
                                     <li><a href="pricingPlans.html">Pricing plans</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="contact">Contact</a></li>
                                     <li><a href="shop.html">Shop</a></li>
                                     <li><a href="shopSingle.html">Shop single</a></li>
                                 </ul>
@@ -191,24 +191,10 @@
                         <div class="col-sm-3 col-sm-offset-1">
                             <div class="widget galleryWidget galleryPopup">
                                 <h3>Gallery Photos</h3> 
-                                <ul>    
-                                    <li><a href="assets/img/Images/photodune-4736579-boy-drawing-xs.jpg"><img src="assets/img/content/ims1.jpg" alt=""></a></li>
-                                    <li><a href="assets/img/Images/photodune-4736468-little-learner-xs.jpg"><img src="assets/img/content/ims2.jpg" alt=""></a></li>
-                                    <li><a href="assets/img/Images/photodune-4372078-cute-friends-xs.jpg"><img src="assets/img/content/ims3.jpg" alt=""></a></li>
-                                    <li><a href="assets/img/Images/photodune-272404-two-little-girls-and-female-teacher-in-kindergarten-xs.jpg"><img src="assets/img/content/ims4.jpg" alt=""></a></li>
-                                    <li><a href="assets/img/Images/photodune-4908998-smiling-educator-with-boy-xs.jpg"><img src="assets/img/content/ims5.jpg" alt=""></a></li>
-                                    <li><a href="assets/img/Images/photodune-5013472-pupils-at-lesson-l.jpg"><img src="assets/img/content/ims6.jpg" alt=""></a></li>
-                                    <li><a href="assets/img/Images/photodune-313960-kindergarten-teacher-helping-students-learn-writing-skills-xs.jpg"><img src="assets/img/content/ims7.jpg" alt=""></a></li>
-                                    <li><a href="assets/img/Images/photodune-4604059-young-family-paint-easter-eggs-xs.jpg"><img src="assets/img/content/ims8.jpg" alt=""></a></li>
-                                    
-                                    <li><a href="assets/img/Images/photodune-4736579-boy-drawing-xs.jpg"><img src="assets/img/content/ims1.jpg" alt=""></a></li>
-                                    <li><a href="assets/img/Images/photodune-4736468-little-learner-xs.jpg"><img src="assets/img/content/ims2.jpg" alt=""></a></li>
-                                    <li><a href="assets/img/Images/photodune-4372078-cute-friends-xs.jpg"><img src="assets/img/content/ims3.jpg" alt=""></a></li>
-                                    <li><a href="assets/img/Images/photodune-272404-two-little-girls-and-female-teacher-in-kindergarten-xs.jpg"><img src="assets/img/content/ims4.jpg" alt=""></a></li>
-                                    <li><a href="assets/img/Images/photodune-4908998-smiling-educator-with-boy-xs.jpg"><img src="assets/img/content/ims5.jpg" alt=""></a></li>
-                                    <li><a href="assets/img/Images/photodune-5013472-pupils-at-lesson-l.jpg"><img src="assets/img/content/ims6.jpg" alt=""></a></li>
-                                    <li><a href="assets/img/Images/photodune-313960-kindergarten-teacher-helping-students-learn-writing-skills-xs.jpg"><img src="assets/img/content/ims7.jpg" alt=""></a></li>
-                                    <li><a href="assets/img/Images/photodune-4604059-young-family-paint-easter-eggs-xs.jpg"><img src="assets/img/content/ims8.jpg" alt=""></a></li>
+                                <ul>
+                                    @foreach($photos as $photo)
+                                    <li><a href="{{url('images/photos/'.$photo->image)}}"><img src="{{url('images/photos/'.$photo->image)}}" alt=""></a></li>
+                                    @endforeach
                                 </ul>
                             </div><!--end widget -->
                         </div><!--end col-sm-4 -->
