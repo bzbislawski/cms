@@ -19,6 +19,8 @@ Route::group(['middleware' => 'footer'], function () {
 	Route::get('news', 'WebsiteController@news');
 	Route::get('articles', 'WebsiteController@articles');
 	Route::get('gallery', 'WebsiteController@gallery');
+	Route::get('teachers', 'WebsiteController@teachers');
+	Route::get('teachers/{id}', 'WebsiteController@singleTeacher');
 });
 
 // Images view

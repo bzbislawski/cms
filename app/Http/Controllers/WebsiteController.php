@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Banner;
 use App\Photography;
 use App\Gallery;
+use App\Teacher;
 use File;
 use Response;
 use Request as Req;
@@ -53,6 +54,18 @@ class WebsiteController extends Controller
     {
         $articles = Banner::all();
         return $articles;
+    }
+
+    public function teachers()
+    {
+        $teachers = Teacher::all();
+        return view('teacher', compact('teachers'));
+    }
+
+    public function singleTeacher($id)
+    {
+        $teacher = Teacher::find($id);
+        return view('singleTeacher', compact('teacher'));
     }
 
     public function images($directory, $filename)
