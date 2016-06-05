@@ -17,7 +17,7 @@
 				<div class="panel-body">
 				    @foreach($photos as $photo)
 						<div class="col-sm-4" style="min-height:220px; max-height: 220px">
-							<img src="{{url('/images/photos') }}/{{ $photo->image }}" class="img-rounded" alt="Photo" width="100%" height="100%" style="max-height: 170px" data-lity>
+							<a href="{{url('/images/photos') }}/{{ $photo->image }}"><img src="{{url('/images/photos') }}/{{ $photo->image }}" class="img-rounded" alt="Photo" width="100%" height="100%" style="max-height: 170px" data-lity></a>
 							
 
 							{!! Form::open(array('action' => array('Admin\GalleryController@deletePhotography', $photo->id),'files'=>true, 'id' => 'deleteform')) !!}

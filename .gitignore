@@ -3,6 +3,4 @@
 Homestead.yaml
 Homestead.json
 .env
-public/gallery/banner/*
-public/gallery/teacher/*
 .DS_Store
