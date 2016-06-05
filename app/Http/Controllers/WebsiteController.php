@@ -34,9 +34,14 @@ class WebsiteController extends Controller
 
     public function gallery()
     {
-        //get one photo from each gallery then return it to view
+        $collection = [];
         $galleries = Gallery::all();
-        return view('gallery', compact('galleries'));
+        foreach($galleries as $gallery)
+        {
+            array_push($collection, $gallery->photography->first());
+        }
+        
+        return view('gallery', compact('collection'));
     }
 
 

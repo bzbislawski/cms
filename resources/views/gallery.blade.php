@@ -32,29 +32,11 @@
 					<div class="col-sm-12">				
 						<div class="contentGallery row">
 							<ul class="clearfix">
-								<li class="drawing col-sm-4" >
-									<div class="wrapper-article galleryPopup1">
-										<a href="assets/img/Images/photodune-5013472-pupils-at-lesson-l.jpg">
-											<img src="assets/img/Images/photodune-5013472-pupils-at-lesson-l.jpg" alt="" class="img-responsive">
-											<h3>Michael on the lesson hour <i class="fa fa-picture-o"></i></h3>
-										</a>
-									</div><!--end wrapper-article -->
-								</li>
-								
+								@foreach($collection as $col)
 								<li class="courses col-sm-4" >
 									<div class="wrapper-article galleryPopup1">
 										<a href="assets/img/Images/photodune-4736450-smart-schoolboy-l.jpg">
-											<img src="assets/img/Images/photodune-4736450-smart-schoolboy-l.jpg" alt="" class="img-responsive">
-											<h3>Michael on the lesson hour <i class="fa fa-picture-o"></i></h3>
-										</a>
-									</div><!--end wrapper-article -->
-								</li>
-								
-								@foreach($galleries as $gallery)
-								<li class="courses col-sm-4" >
-									<div class="wrapper-article galleryPopup1">
-										<a href="assets/img/Images/photodune-4736450-smart-schoolboy-l.jpg">
-											<img src="assets/img/Images/photodune-4736450-smart-schoolboy-l.jpg" alt="" class="img-responsive">
+											<img src="{{ url('images/photos/'.$col->image) }}" alt="" class="img-responsive">
 											<h3>Michael on the lesson hour <i class="fa fa-picture-o"></i></h3>
 										</a>
 									</div><!--end wrapper-article -->
