@@ -3,24 +3,20 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Gallery;
 use App\Photography;
 use Storage;
+
 class GalleryController extends Controller
 {
     /**
      * Create a new controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
         $this->middleware('auth');
     }
-
 
     /**
      * Display a listing of the resource.
@@ -30,7 +26,8 @@ class GalleryController extends Controller
     public function index()
     {
         $galleries = Gallery::paginate(10);
-        return view('adminpanel.galleries.index', compact('galleries') );
+
+        return view('adminpanel.galleries.index', compact('galleries'));
     }
 
     /**
@@ -46,7 +43,8 @@ class GalleryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -55,40 +53,46 @@ class GalleryController extends Controller
         $gallery->save();
         $gallery->addImage($request);
 
-        \Session::flash('flash_gallery_positive', trans('adminpanel.gallery_store')); 
+        \Session::flash('flash_gallery_positive', trans('adminpanel.gallery_store'));
+
         return redirect()->action('Admin\GalleryController@index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         $gallery = Gallery::find($id);
         $photos = Photography::where('gallery_id', '=', $id)->get();
+
         return view('adminpanel.galleries.show', compact('photos', 'gallery'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         $gallery = Gallery::find($id);
+
         return view('adminpanel.galleries.edit', compact('gallery'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -99,20 +103,21 @@ class GalleryController extends Controller
         $gallery->addImage($request);
 
         \Session::flash('flash_gallery_positive', trans('adminpanel.gallery_update'));
+
         return redirect()->action('Admin\GalleryController@show', $gallery->id);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         $photos = Photography::where('gallery_id', '=', $id)->get();
-        foreach($photos as $photo)
-        {
+        foreach ($photos as $photo) {
             Storage::delete('photos/'.$photo->image);
         }
 
@@ -120,6 +125,7 @@ class GalleryController extends Controller
         $gallery->delete();
 
         \Session::flash('flash_gallery_positive', trans('adminpanel.gallery_delete'));
+
         return redirect()->action('Admin\GalleryController@index');
     }
 
@@ -128,6 +134,7 @@ class GalleryController extends Controller
         $photo = Photography::find($id);
         Storage::delete('photos/'.$photo->image);
         $photo->delete();
+
         return redirect()->back();
     }
 }

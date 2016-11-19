@@ -2,7 +2,7 @@
 
 function test()
 {
-	return "heja";
+    return 'heja';
 }
 
 /*
@@ -14,9 +14,11 @@ function test()
 | Very useful for navigation, marking if the link is active.
 |
 */
-function isActiveRoute($route, $output = "active")
+function isActiveRoute($route, $output = 'active')
 {
-    if (Route::currentRouteName() == $route) return $output;
+    if (Route::currentRouteName() == $route) {
+        return $output;
+    }
 }
 
 /*
@@ -28,11 +30,11 @@ function isActiveRoute($route, $output = "active")
 | Very useful for navigation, marking if the link is active.
 |
 */
-function areActiveRoutes(Array $routes, $output = "active")
+function areActiveRoutes(array $routes, $output = 'active')
 {
-    foreach ($routes as $route)
-    {
-        if (Route::currentRouteName() == $route) return $output;
+    foreach ($routes as $route) {
+        if (Route::currentRouteName() == $route) {
+            return $output;
+        }
     }
-
 }

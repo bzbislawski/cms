@@ -1,103 +1,104 @@
-<?php 
+<?php
+
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use App\Banner;
 use App\Http\Requests\BannerRequest;
 use Storage;
 
+class BannerController extends Controller
+{
+    /**
+     * Create a new controller instance.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
-class BannerController extends Controller {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function index()
+    {
+        $banners = Banner::paginate(10);
 
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
+        return view('adminpanel.banners.index', compact('banners'));
+    }
 
+    /**
+     * Shows create form for Banner.
+     *
+     * @return View
+     */
+    public function create()
+    {
+        return view('adminpanel.banners.create');
+    }
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		$banners = Banner::paginate(10);
-		return view('adminpanel.banners.index', compact('banners') );
-	}
+    /**
+     * Store Banner in the storage.
+     *
+     * @return Redirect
+     */
+    public function store(BannerRequest $request)
+    {
+        $banner = new Banner($request->except(['image']));
+        $banner->save();
+        $banner->addImage($request);
 
-	/**
-	 * Shows create form for Banner
-	 * 
-	 * @return View
-	 */
-	public function create()
-	{
-		return view('adminpanel.banners.create');
-	}
+        \Session::flash('flash_banner_positive', trans('adminpanel.banner_store'));
 
-	/**
-	 * Store Banner in the storage
-	 * 
-	 * @return Redirect
-	 */
-	public function store(BannerRequest $request)
-	{
-		$banner = new Banner($request->except(['image']));
-		$banner->save();
-		$banner->addImage($request);
+        return redirect()->action('Admin\BannerController@index');
+    }
 
-		\Session::flash('flash_banner_positive', trans('adminpanel.banner_store')); 
-		return redirect()->action('Admin\BannerController@index');
-	}
+    /**
+     * Shows particular banner edit form.
+     *
+     * @param  $id
+     *
+     * @return view
+     */
+    public function edit($id)
+    {
+        $banner = Banner::find($id);
 
-	/**
-	 * Shows particular banner edit form.
-	 * 
-	 * @param  $id
-	 * @return view
-	 */
-	public function edit($id)
-	{
-		$banner = Banner::find($id);
-		return view('adminpanel.banners.edit', compact('banner'));
-	}
+        return view('adminpanel.banners.edit', compact('banner'));
+    }
 
-	/**
-	 * Updates/patch Banner in the storage
-	 * 
-	 * @param  $id
-	 * @return Redirect
-	 */
-	public function update($id, BannerRequest $request)
-	{
-		$banner = Banner::findOrFail($id);
-		$banner->update($request->all());
+    /**
+     * Updates/patch Banner in the storage.
+     *
+     * @param  $id
+     *
+     * @return Redirect
+     */
+    public function update($id, BannerRequest $request)
+    {
+        $banner = Banner::findOrFail($id);
+        $banner->update($request->all());
 
-		\Session::flash('flash_banner_positive', trans('adminpanel.banner_update'));
-		return redirect()->back();
-	}
+        \Session::flash('flash_banner_positive', trans('adminpanel.banner_update'));
 
-	/**
-	 * Destroy Banner from the storage
-	 * 
-	 * @return Redirect
-	 */
-	public function destroy($id)
-	{
-		$banner = Banner::find($id);
-		$banner->deleteImage($banner->image);
-		$banner->delete();
+        return redirect()->back();
+    }
 
-		\Session::flash('flash_banner_positive', trans('adminpanel.banner_delete'));
-		return redirect()->action('Admin\BannerController@index');
-	}
+    /**
+     * Destroy Banner from the storage.
+     *
+     * @return Redirect
+     */
+    public function destroy($id)
+    {
+        $banner = Banner::find($id);
+        $banner->deleteImage($banner->image);
+        $banner->delete();
 
+        \Session::flash('flash_banner_positive', trans('adminpanel.banner_delete'));
+
+        return redirect()->action('Admin\BannerController@index');
+    }
 }

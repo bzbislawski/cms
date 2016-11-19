@@ -1,4 +1,5 @@
 <?php
+
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
@@ -6,23 +7,21 @@ use Storage;
 
 class Banner extends Model
 {
-
     protected $table = 'banners';
 
     protected $fillable = ['title', 'text', 'text2', 'image', 'isPublished'];
 
     /**
-     * Add file name to database, add file to storage, save all
-     * @param type $request 
-     * @return null
+     * Add file name to database, add file to storage, save all.
+     *
+     * @param type $request
      */
     public function addImage($request)
     {
-        if ($request->file('image')->isValid())
-        {
+        if ($request->file('image')->isValid()) {
             $extension = $request->file('image')->getClientOriginalExtension();
-            $fileName = $this->id . '.' . $extension;
-            Storage::put('banners/' . $fileName, file_get_contents($request->file('image')->getRealPath()));
+            $fileName = $this->id.'.'.$extension;
+            Storage::put('banners/'.$fileName, file_get_contents($request->file('image')->getRealPath()));
 
             $this->image = $fileName;
             $this->save();
@@ -31,9 +30,9 @@ class Banner extends Model
 
     public function deleteImage($filename)
     {
-        $path = 'banners/'. $filename;
-        if(Storage::has($path))
+        $path = 'banners/'.$filename;
+        if (Storage::has($path)) {
             Storage::delete($path);
+        }
     }
-
 }

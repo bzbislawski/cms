@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Photography extends Model
 {
-	protected $table = 'photographies';
+    protected $table = 'photographies';
 
     protected $fillable = ['image', 'gallery_id', 'published_at'];
 

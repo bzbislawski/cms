@@ -1,7 +1,7 @@
-<?php 
+<?php
+
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 //use Illuminate\Http\Request;
@@ -9,85 +9,77 @@ use App\Http\Controllers\Controller;
 use App\Teacher;
 use App\Http\Requests\TeacherRequest;
 
+class TeacherController extends Controller
+{
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
-class TeacherController extends Controller {
+    public function index()
+    {
+        $teachers = Teacher::paginate(10);
 
+        return view('adminpanel.teachers.index', compact('teachers'));
+    }
 
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
+    public function create()
+    {
+        return view('adminpanel.teachers.create');
+    }
 
-	
-	public function index()
-	{
-		$teachers = Teacher::paginate(10);
-		return view('adminpanel.teachers.index', compact('teachers'));
-	}
+    public function store(TeacherRequest $request)
+    {
+        $teacher = new Teacher($request->except('image'));
+        $teacher->save();
+        $teacher->addImage($request);
 
-	
-	public function create()
-	{
-		return view('adminpanel.teachers.create');
-	}
+        \Session::flash('flash_teacher_positive', trans('adminpanel.teacher_store'));
 
-	
-	public function store(TeacherRequest $request)
-	{
-		$teacher = new Teacher($request->except('image'));
-		$teacher->save();
-		$teacher->addImage($request);
+        return redirect()->action('Admin\TeacherController@index');
+    }
 
+    public function edit($id)
+    {
+        $teacher = Teacher::find($id);
 
-		\Session::flash('flash_teacher_positive', trans('adminpanel.teacher_store')); 
-		return redirect()->action('Admin\TeacherController@index');
-	}
+        return view('adminpanel.teachers.edit', compact('teacher'));
+    }
 
-	
-	public function edit($id)
-	{
-		$teacher = Teacher::find($id);
-		return view('adminpanel.teachers.edit', compact('teacher'));
-	}
+    public function update($id, TeacherRequest $request)
+    {
+        $teacher = Teacher::findOrFail($id);
+        //var_dump($request);exit;
 
-	
-	public function update($id, TeacherRequest $request)
-	{
-		$teacher = Teacher::findOrFail($id);
-		//var_dump($request);exit;
+        if (isset($request['Submit'])) {
+            $teacher->update($request->except('image'));
+            $teacher->save();
+            $teacher->addImage($request);
 
-		if(isset($request['Submit']))
-		{
-			$teacher->update($request->except('image'));
-			$teacher->save();
-			$teacher->addImage($request);
+            $message = trans('adminpanel.teacher_update');
+        }
 
+        if (isset($request['delete'])) {
+            $teacher->deleteImage($teacher->image);
+            $teacher->image = '';
+            $teacher->save();
 
-			$message = trans('adminpanel.teacher_update');
-		}
+            $message = trans('adminpanel.teacher_delete_image');
+        }
 
-		if(isset($request['delete']))
-		{
-			$teacher->deleteImage($teacher->image);
-			$teacher->image = "";
-			$teacher->save();
-			
-			$message = trans('adminpanel.teacher_delete_image');
-		}
+        \Session::flash('flash_teacher_positive', $message);
 
-		\Session::flash('flash_teacher_positive', $message);
-		return redirect()->back();
-	}
+        return redirect()->back();
+    }
 
+    public function destroy($id)
+    {
+        $teacher = Teacher::find($id);
+        $teacher->deleteImage($teacher->image);
+        $teacher->delete();
 
-	public function destroy($id)
-	{
-		$teacher = Teacher::find($id);
-		$teacher->deleteImage($teacher->image);
-		$teacher->delete();
-		
+        \Session::flash('flash_teacher_positive', trans('adminpanel.teacher_delete'));
 
-		\Session::flash('flash_teacher_positive', trans('adminpanel.teacher_delete'));
-		return redirect()->action('Admin\TeacherController@index');
-	}
+        return redirect()->action('Admin\TeacherController@index');
+    }
 }

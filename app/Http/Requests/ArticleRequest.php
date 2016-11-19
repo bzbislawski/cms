@@ -2,8 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Request;
-
 class ArticleRequest extends Request
 {
     /**
@@ -25,9 +23,8 @@ class ArticleRequest extends Request
     {
         return [
             'title' => 'required',
-            'body'  => 'required',
-            'published_at'  => 'required|date'
+            'body' => 'required',
+            'published_at' => 'required|date',
         ];
     }
-
 }

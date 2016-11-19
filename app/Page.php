@@ -1,10 +1,12 @@
-<?php namespace App;
+<?php
+
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Page extends Model {
-
-	 /**
+class Page extends Model
+{
+    /**
      * The database table used by the model.
      *
      * @var string
@@ -17,5 +19,4 @@ class Page extends Model {
      * @var array
      */
     protected $fillable = ['title', 'url', 'category', 'priority', 'body', 'isPublished'];
-
 }

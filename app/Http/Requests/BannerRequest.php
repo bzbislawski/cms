@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Request;
 use App\Banner;
 
 class BannerRequest extends Request
@@ -26,8 +25,7 @@ class BannerRequest extends Request
     {
         $banner = Banner::find($this->banner);
 
-        switch($this->method())
-        {
+        switch ($this->method()) {
             case 'PATCH':
             {
                 return ['title' => 'required'];
@@ -45,15 +43,15 @@ class BannerRequest extends Request
 
     /**
      * DISABLED FOR MEMORY
-     * Overwrites default error messages
-     * 
+     * Overwrites default error messages.
+     *
      * @return array
      */
     public function messages()
     {
         return [
             //'title.required' => 'Brakuje: tytułu',
-            //'image.required' => 'Brakuje: obrazu',  
+            //'image.required' => 'Brakuje: obrazu',
         ];
     }
 }
