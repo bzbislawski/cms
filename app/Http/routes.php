@@ -13,15 +13,13 @@
 
 
 //Main website
-Route::group(['middleware' => 'footer'], function () {
-	Route::get('', 'WebsiteController@index');
-	Route::get('contact', 'WebsiteController@contact');
-	Route::get('news', 'WebsiteController@news');
-	Route::get('articles', 'WebsiteController@articles');
-	Route::get('gallery', 'WebsiteController@gallery');
-	Route::get('teachers', 'WebsiteController@teachers');
-	Route::get('teachers/{id}', 'WebsiteController@singleTeacher');
-});
+Route::get('', 'WebsiteController@index');
+Route::get('contact', 'WebsiteController@contact');
+Route::get('news', 'WebsiteController@news');
+Route::get('articles', 'WebsiteController@articles');
+Route::get('gallery', 'WebsiteController@gallery');
+Route::get('teachers', 'WebsiteController@teachers');
+Route::get('teachers/{id}', 'WebsiteController@singleTeacher');
 
 // Images view
 Route::get('images/{directory}/{filename}', 'WebsiteController@images');

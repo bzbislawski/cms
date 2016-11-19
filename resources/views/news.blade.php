@@ -179,3 +179,7 @@
     </div>
     <!-- end Page Content -->
 @endsection
+
+@section('footer')
+    @include('partials._footer')
+@endsection

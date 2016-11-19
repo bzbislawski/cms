@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Banner;
@@ -13,7 +10,7 @@ use App\Gallery;
 use App\Teacher;
 use File;
 use Response;
-use Request as Req;
+use Request;
 use View;
 
 class WebsiteController extends Controller
@@ -21,7 +18,9 @@ class WebsiteController extends Controller
 
     public function __construct()
     {
-        $photos = Req::get('photos');
+        $photos = Photography::latest('created_at')
+            ->take(16)
+            ->get();
         View::share('photos', $photos);
     }
 
