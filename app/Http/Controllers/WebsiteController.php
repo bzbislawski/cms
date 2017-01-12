@@ -22,7 +22,7 @@ class WebsiteController extends Controller
 
     public function index()
     {
-        $banners = Banner::where('isPublished', '=', 1)->get();
+        $banners = Banner::where('is_published', '=', 1)->get();
 
         return view('home', compact('banners'));
     }

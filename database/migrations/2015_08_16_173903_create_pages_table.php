@@ -20,7 +20,7 @@ class CreatePagesTable extends Migration {
 			$table->string('category');
 			$table->integer('priority');
 			$table->text('body');
-			$table->boolean('isPublished');
+			$table->boolean('is_published');
 			$table->timestamps();
 		});
 	}

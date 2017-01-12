@@ -24,8 +24,8 @@
 </div>
 
 <div class="form-group">
-	{!! Form::label('isPublished', trans('adminpanel.publish') .':') !!}
-	{!! Form::select('isPublished', array(true=>trans('adminpanel.publish'), false=>trans('adminpanel.hide')),1,['class' => 'form-control']) !!}
+	{!! Form::label('is_published', trans('adminpanel.publish') .':') !!}
+	{!! Form::select('is_published', array(true=>trans('adminpanel.publish'), false=>trans('adminpanel.hide')),1,['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group text-center">

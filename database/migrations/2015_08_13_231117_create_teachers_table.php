@@ -19,7 +19,7 @@ class CreateTeachersTable extends Migration {
 			$table->string('image');
 			$table->string('contact');
 			$table->text('about');
-			$table->boolean('isPublished');
+			$table->boolean('is_published');
 			$table->timestamps();
 		});
 	}

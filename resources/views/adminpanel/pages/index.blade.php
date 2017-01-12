@@ -30,7 +30,7 @@
 					      	<th class="col-sm-1">ID</th>
 					        <th>{{ trans('adminpanel.title') }}</th>
 					        <th>{{ trans('adminpanel.url') }}</th>
-					        <th>{{ trans('adminpanel.isPublished') }}</th>
+					        <th>{{ trans('adminpanel.is_published') }}</th>
 					        <th class="col-sm-1">{{ trans('adminpanel.edit') }}</th>
 					        <th class="col-sm-1">{{ trans('adminpanel.delete') }}</th>
 					      </tr>
@@ -41,7 +41,7 @@
 					      	<td>{{ $page->id}}</td>
 					        <td>{{ $page->title}}</td>
 					        <td>{{ $page->url}}</td>
-					        <td>{{ $page->isPublished ? trans('adminpanel.yes') : trans('adminpanel.no') }}</td>
+					        <td>{{ $page->is_published ? trans('adminpanel.yes') : trans('adminpanel.no') }}</td>
 					        <td>
 						        <a href="pages/{{ $page->id }}/edit"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span></button></a>
 					        </td>

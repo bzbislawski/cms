@@ -15,7 +15,7 @@
 			@if(Session::has('flash_teacher_positive'))
 				<div class="alert alert-success">{{ Session::get('flash_teacher_positive') }}</div>
 			@endif
-			
+
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<div class="btn-block">
@@ -30,9 +30,9 @@
 					      <tr>
 					      	<th class="col-sm-1">ID</th>
 					        <th>{{ trans('adminpanel.fullName') }}</th>
-					        <th>{{ trans('adminpanel.isPublished') }}</th>
+					        <th>{{ trans('adminpanel.is_published') }}</th>
 					        <th class="col-sm-1">{{ trans('adminpanel.edit') }}</th>
-					        <th class="col-sm-1">{{ trans('adminpanel.delete') }}</th>
+					        <th class="col-sm-1">Delete</th>
 					      </tr>
 					    </thead>
 					    <tbody>
@@ -40,7 +40,7 @@
 					      <tr>
 					      	<td>{{ $teacher->id}}</td>
 					        <td>{{ $teacher->name}}</td>
-					        <td>{{ $teacher->isPublished ? trans('adminpanel.yes') : trans('adminpanel.no')}}</td>
+					        <td>{{ $teacher->is_published ? trans('adminpanel.yes') : trans('adminpanel.no')}}</td>
 					        <td>
 						        <a href="teachers/{{ $teacher->id }}/edit"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span></button></a>
 					        </td>

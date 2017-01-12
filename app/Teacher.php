@@ -9,7 +9,7 @@ class Teacher extends Model
 {
     protected $table = 'teachers';
 
-    protected $fillable = ['name', 'contact', 'about', 'image', 'isPublished'];
+    protected $fillable = ['name', 'contact', 'about', 'image', 'is_published'];
 
     /**
      * Add file name to database, add file to storage, save all.

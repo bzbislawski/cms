@@ -18,5 +18,5 @@ class Page extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'url', 'category', 'priority', 'body', 'isPublished'];
+    protected $fillable = ['title', 'url', 'category', 'priority', 'body', 'is_published'];
 }

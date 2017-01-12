@@ -39,7 +39,7 @@ return
 'category' => 'Category',
 'priority' => 'Priority',
 'body' => 'Description',
-'isPublished' => 'Published',
+'is_published' => 'Published',
 'publish' => 'Publish',
 'published_at' => 'Published at',
 'updated_at' => 'Updated at',

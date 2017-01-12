@@ -39,7 +39,7 @@ return
 'category' => 'Kategoria',
 'priority' => 'Priorytet',
 'body' => 'Opis', //doubled entry description
-'isPublished' => 'Opublikowany',
+'is_published' => 'Opublikowany',
 'publish' => 'Publikuj',
 'published_at' => 'Opublikowane',
 'updated_at' => 'Zaktualizowane',

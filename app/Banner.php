@@ -9,7 +9,7 @@ class Banner extends Model
 {
     protected $table = 'banners';
 
-    protected $fillable = ['title', 'text', 'text2', 'image', 'isPublished'];
+    protected $fillable = ['title', 'text', 'text2', 'image', 'is_published'];
 
     /**
      * Add file name to database, add file to storage, save all.

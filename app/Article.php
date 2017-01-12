@@ -19,7 +19,7 @@ class Article extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'body', 'isPublished', 'published_at'];
+    protected $fillable = ['title', 'body', 'is_published', 'published_at'];
 
     /**
      * Allows to use ->format() on published_at.

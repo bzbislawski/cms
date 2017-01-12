@@ -31,7 +31,7 @@
 				      	<th class="col-sm-1">ID</th>
 				        <th>{{ trans('adminpanel.title') }}</th>
 					    <th>{{ trans('adminpanel.url') }}</th>
-				        <th>{{ trans('adminpanel.isPublished') }}</th>
+				        <th>{{ trans('adminpanel.is_published') }}</th>
 					    <th class="col-sm-1">{{ trans('adminpanel.edit') }}</th>
 					    <th class="col-sm-1">{{ trans('adminpanel.delete') }}</th>
 				      </tr>
@@ -42,7 +42,7 @@
 				      	<td>{{ $banner->id}}</td>
 				        <td>{{ $banner->title}}</td>
 				        <td>{{ $banner->link}}</td>
-				        <td>{{ $banner->isPublished ? trans('adminpanel.yes') : trans('adminpanel.no') }}</td>
+				        <td>{{ $banner->is_published ? trans('adminpanel.yes') : trans('adminpanel.no') }}</td>
 				        <td>
 					        <a href="banners/{{ $banner->id }}/edit"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span></button></a>
 				        </td>

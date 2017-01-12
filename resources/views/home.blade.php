@@ -264,7 +264,7 @@
 					
 					<div class="col-lg-4">
 						<div class="purchaseButton">
-							<button class="btn btn-purchase" >purchase now</button>
+							<a href="news"><button class="btn btn-purchase" >purchase now</button></a>
 						</div><!--end purchaseButton -->
 					</div><!--end col-lg-4 -->
 				</div><!--end row -->

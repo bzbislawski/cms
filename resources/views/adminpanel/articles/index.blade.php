@@ -30,7 +30,7 @@
 					        <th>{{ trans('adminpanel.title') }}</th>
 					        <th>{{ trans('adminpanel.published_at') }}</th>
 					        <th>{{ trans('adminpanel.updated_at') }}</th>
-					        <th>{{ trans('adminpanel.isPublished') }}</th>
+					        <th>{{ trans('adminpanel.is_published') }}</th>
 					        <th class="col-sm-1">{{ trans('adminpanel.edit') }}</th>
 					        <th class="col-sm-1">{{ trans('adminpanel.delete') }}</th>
 					      </tr>
@@ -41,7 +41,7 @@
 					        <td>{{ $article->title}}</td>
 					        <td>{{ $article->published_at->format('d.m.Y H:i:s')}}</td>
 					        <td>{{ $article->updated_at->diffForHumans()}}</td>
-					        <td>{{ $article->isPublished ? trans('adminpanel.yes') : trans('adminpanel.no') }}</td>
+					        <td>{{ $article->is_published ? trans('adminpanel.yes') : trans('adminpanel.no') }}</td>
 					        <td>
 					        	<a href="articles/{{ $article->id }}/edit"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span></button></a>
 					        </td>

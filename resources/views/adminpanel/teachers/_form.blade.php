@@ -1,5 +1,5 @@
  <div class="form-group">
-	{!! Form::label('name', trans('adminpanel.fullName') . ':') !!}
+	{!! Form::label('name', 'First and Lastname' . ':') !!}
 	{!! Form::text('name', null, ['class' => 'form-control']) !!}
 </div>
 
@@ -26,11 +26,11 @@
 @endif
 
 <div class="form-group">
-	{!! Form::label('isPublished', trans('adminpanel.publish') . ':') !!}
-	{!! Form::select('isPublished', array(true=>trans('adminpanel.publish'), false=>trans('adminpanel.hide')),null,['class' => 'form-control']) !!}
+	{!! Form::label('is_published', trans('adminpanel.publish') . ':') !!}
+	{!! Form::select('is_published', array(true=>trans('adminpanel.publish'), false=>trans('adminpanel.hide')),null,['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group text-center">
-	{!! Form::submit($submitButtonText, ['class' => 'btn btn-primary', 'name' => $submitButtonText]) !!}
+	{!! Form::submit('Submit', ['class' => 'btn btn-primary', 'name' => $submitButtonText]) !!}
 	{!! Html::link(action('Admin\TeacherController@index'), trans('adminpanel.back'), ['class' => 'btn btn-primary']) !!}
 </div>

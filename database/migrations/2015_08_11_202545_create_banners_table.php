@@ -19,7 +19,7 @@ class CreateBannersTable extends Migration {
             $table->mediumText('text2');
             $table->string('image');
             $table->string('link');
-            $table->boolean('isPublished');
+            $table->boolean('is_published');
             $table->timestamps();
         });
     }

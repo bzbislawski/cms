@@ -40,7 +40,7 @@
 			        	<div class="form-group">
 			        		{!! Form::checkbox('sendCC', null, null) !!}
 			        		
-				        	{!! Form::label('isPublished', 'Wyślij kopię wiadomości na adres: ' . env('SITE_MAIL')) !!} 
+				        	{!! Form::label('is_published', 'Wyślij kopię wiadomości na adres: ' . env('SITE_MAIL')) !!} 
 				        </div>
 
 				        <div class="form-group text-center">
