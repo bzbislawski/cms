@@ -77,7 +77,7 @@
 <div id="" style="background-color: #fa6f57;padding: 20px 0;color: #fff;">
 <div class="container" >
     <div class="col-md-6">
-        <span class="pull-left">Copyright © 2016 Name of Company. All rights reserved.
+        <span class="pull-left">Copyright © 2017. All rights reserved.
         <br>Design and implementation: <a href="mailto:bzbislawski@gmail.com" style="color:#FFFFFF">Bartosz Zbislawski</a></span>
     </div>
     <div class="col-md-6">
